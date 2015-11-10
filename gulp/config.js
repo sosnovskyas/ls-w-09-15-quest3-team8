@@ -14,7 +14,9 @@ module.exports = {
     sequenceBuild: [
       'dev-backend',
       'dev-jade',
+      'dev-js-vendor',
       'dev-js-custom',
+      'dev-compass',
       'dev-fonts',
       'dev-img'
     ],
@@ -24,6 +26,7 @@ module.exports = {
     sequenceWatch: [
       'dev-watch-backend',
       'dev-watch-jade',
+      'dev-watch-compass',
       'dev-watch-js-custom',
       'dev-watch-img'
     ],
@@ -44,6 +47,16 @@ module.exports = {
       indentedSyntax: true, // Enable .sass syntax!
       imagePath: 'images' // Used by the image-url helper
     }
+  },
+  devCompass: {
+    src: src + '/templates/custom.scss',
+    sass: 'src/templates',
+    image: 'src/images',
+    generated_images_path: 'build/dev/i',
+    sourcemap: true,
+    watch: src + '/**/*.scss',
+    dest: dev,
+    concatFile: 'custom.css'
   },
   devCssVendor: {
     src: [
@@ -75,7 +88,7 @@ module.exports = {
   },
   devJade: {
     watch: src + '/**/*.jade',
-    src: src + '/bundles/*.jade',
+    src: src + '/pages/*.jade',
     dest: dev
   },
   devBackend: {
