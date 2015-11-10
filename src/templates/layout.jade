@@ -1,12 +1,17 @@
 doctype html
 head
     include head
-body.bg
+body
   <!--[if lt IE 8]>
   <p class="chromeframe"> Вы используете устаревший браузер </p>
   <![endif]-->
 
-  .main
-    block content
-    include ../blocks/footer/footer
-  script(src='custom.js')
+// Page Wrapper
+.wrapper
+        // Main Content
+        .main
+            .container
+                include ../blocks/canvas/canvas
+                include ../blocks/sidebar/sidebar  
+        include ../blocks/footer/footer
+    script(src='custom.js')

@@ -22,15 +22,15 @@
 */
 
 @mixin clearfix {
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-  }
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+    }
 
-  &:after {
-    clear: both;
-  }
+    &:after {
+        clear: both;
+    }
 }
 
 
@@ -39,30 +39,24 @@
 */
 html,
 body{
-  height: 100%;
-  width: 100%;
-
-  //min-height: 480px;
-  //min-width: 320px;
+    height: 100%;
+    width: 100%;
 }
 
-.bg{
-  //noinspection CssUnknownTarget
-  background-image: url("i/bg.png");
-  background-attachment: local , local;
-  background-position: 6px -120px;
-
+body {
+    font-family: robotolight;
+    background: url("i/bg.png") repeat 0 0 #d6ba9d;    
+    background-size: cover;
 }
 
-//ul{
-//  margin: 0;
-//  padding: 0;
-//  list-style: none;
-//
-//  a{
-//    text-decoration: none;
-//  }
-//}
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.main {
+    padding-top: 60px;
+}
 
 
 /*
