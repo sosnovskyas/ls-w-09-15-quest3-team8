@@ -1,4 +1,34 @@
 aside.sidebar
   .sidebar__header
     | Настройки
-  form(action='watermark.php', method='post').sidebar__form
+  form.sidebar__setting
+    .settings__upload
+      .upload-image
+        label.upload-image__label
+          h3.upload-image__header Исходное изображение
+          .upload-image__file
+            input.upload-image__input(type="file" name="")
+            input.upload-image__fake-input(type="text" name="")
+            .upload-image__file-icon
+      .upload-watermark
+        h3.upload-watermark__header Водяной знак
+        .upload-watermark__file
+          input.upload-watermark__input(type="file" name="")
+          input.upload-watermark__fake-input(type="text" name="")
+          .upload-watermark__file-icon
+    .settings__position
+      h3.position__header Положение
+      .position-blocks
+        .position-blocks__wrapper
+          ul.position-blocks__list
+            li.position-blocks__item.position-blocks__item_top-left
+            li.position-blocks__item.position-blocks__item_top-center
+            li.position-blocks__item.position-blocks__item_top-right
+            li.position-blocks__item.position-blocks__item_middle-left
+            li.position-blocks__item.position-blocks__item_middle-center
+            li.position-blocks__item.position-blocks__item_middle-right
+            li.position-blocks__item.position-blocks__item_bottom-left
+            li.position-blocks__item.position-blocks__item_bottom-center
+            li.position-blocks__item.position-blocks__item_bottom-right
+      .position-coords
+
