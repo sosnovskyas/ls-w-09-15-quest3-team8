@@ -1,3 +1,73 @@
-@import "0layer_reset";
-@import "1layer_base";
-@import "2layer_project";
+/*
+    NORMALIZE
+*/
+@import '../../bower_components/normalize-scss/normalize';
+
+/*
+    VARIABLES
+*/
+//$browser-context: 16px;
+//$footer-height: 80px;
+
+
+/*
+    IMPORTS
+*/
+
+//noinspection CssUnknownTarget
+@import "compass";
+
+/*
+    MIXINS
+*/
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+/*
+    STYLES
+*/
+html,
+body{
+  height: 100%;
+  width: 100%;
+
+  //min-height: 480px;
+  //min-width: 320px;
+}
+
+.bg{
+  //noinspection CssUnknownTarget
+  background-image: url("i/bg.png");
+  background-attachment: local , local;
+  background-position: 6px -120px;
+
+}
+
+//ul{
+//  margin: 0;
+//  padding: 0;
+//  list-style: none;
+//
+//  a{
+//    text-decoration: none;
+//  }
+//}
+
+
+/*
+    includes
+*/
+@import '../blocks/canvas/canvas';
+@import '../blocks/sidebar/sidebar';
+@import '../blocks/footer/footer';
