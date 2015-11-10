@@ -2,36 +2,47 @@
 aside.main-sidebar
     h2.main-sidebar__header Настройки
     form.setting__form(action="watermark.php" method="post")
-    ul.settings__list
-        // Upload Image
-        li.upload-image
-            label.upload-image__label
-                h3.upload-image__header Исходное изображение
-                .upload-image__file
-                input.upload-image__input(type="file" name="")
-                input.upload-image__fake-input(type="text" name="")
-                .upload-image__file-icon
-        // Upload Watermark
-        li.upload-watermark
-            h3.upload-watermark__header Водяной знак
-            .upload-watermark__file
-            input.upload-watermark__input(type="file" name="")
-            input.upload-watermark__fake-input(type="text" name="")
-            .upload-watermark__file-icon
-        // Set Position 
-        li.settings__position
-            h3.position__header Положение
-            .position-blocks
-                .position-blocks__wrapper
-                    ul.position-blocks__list
-                        li.position-blocks__item(data-position="top-left")
-                        li.position-blocks__item(data-position="top-center")
-                        li.position-blocks__item(data-position="top-right")
-                        li.position-blocks__item(data-position="middle-left")
-                        li.position-blocks__item(data-position="middle-center")
-                        li.position-blocks__item(data-position="middle-right")
-                        li.position-blocks__item(data-position="bottom-left")
-                        li.position-blocks__item(data-position="bottom-center") 
-                        li.position-blocks__item(data-position="bottom-right") 
-            .position-coords
-
+        // Settings
+        ul.settings__list
+            // Upload Image and Watermark
+            li.settings__item.settings__upload
+                label.upload-image__label
+                    h3.upload-image__header Исходное изображение
+                    .upload-image__file
+                        input.upload-image__input(type="file" name="")
+                        input.upload-image__fake-input(type="text" name="")
+                        .upload-image__file-icon
+                label.upload-watermark__label
+                    h3.upload-watermark__header Водяной знак
+                    .upload-watermark__file
+                        input.upload-watermark__input(type="file" name="")
+                        input.upload-watermark__fake-input(type="text" name="")
+                        .upload-watermark__file-icon
+            // Set Position 
+            li.settings__item.settings__position.clearfix
+                h3.position__header Положение
+                .position-blocks
+                    .position-blocks__wrapper
+                        a(href="#").position-blocks__link(data-position="top-left")
+                        a(href="#").position-blocks__link(data-position="top-center")
+                        a(href="#").position-blocks__link(data-position="top-right")
+                        a(href="#").position-blocks__link(data-position="middle-left")
+                        a(href="#").position-blocks__link(data-position="middle-center")
+                        a(href="#").position-blocks__link(data-position="middle-right")
+                        a(href="#").position-blocks__link(data-position="bottom-left")
+                        a(href="#").position-blocks__link(data-position="bottom-center") 
+                        a(href="#").position-blocks__link(data-position="bottom-right") 
+                .position-coords
+                    .position-coords__label
+                        span.position-coords__title X
+                        input#spinner_x.position-coords__input(type="text" name="")
+                    .position-coords__label
+                        span.position-coords__title Y
+                        input#spinner_y.position-coords__input(type="text" name="")                        
+            // Set Opacity
+            li.settings__item.settings__opacity
+                h3.opacity__header Прозрачность
+        // Buttons
+        .settings__buttons.clearfix
+            input.settings__btn.settings__btn_reset(type="reset" value="Сбросить")
+            input.settings__btn.settings__btn_download(type="submit" value="Скачать")
