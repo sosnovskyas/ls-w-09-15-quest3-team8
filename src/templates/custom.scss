@@ -37,16 +37,17 @@
 /*
     STYLES
 */
-html,
-body{
-    height: 100%;
-    width: 100%;
+
+html {
+    position: relative; 
+    min-height: 100%;      
 }
 
 body {
     font-family: robotolight;
-    background: url("i/bg.png") repeat 0 0 #d6ba9d;    
-    background-size: cover;
+    margin-bottom: 61px;
+    background: url("i/bg.jpg") no-repeat 0 0 #d6ba9d;    
+    background-size: cover;    
 }
 
 .container {
@@ -55,12 +56,55 @@ body {
 }
 
 .main {
-    padding-top: 60px;
+    padding: 60px 0;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    float: left;
+    width: 700px;
+    padding: 25px;
+    box-sizing: border-box;
+    background: url("i/bg_main-content.jpg") no-repeat 0 0 #6a6563;
+    background-size: cover;   
+}
+
+.main-content__header {
+    color: #fff;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0 0 60px 0;
+}
+
+/* MAIN SIDEBAR */
+
+.main-sidebar {
+    float: left;
+    width: 260px;
+}
+
+/*
+    HELPERS
+*/
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
 }
 
 
 /*
-    includes
+    INCLUDES
 */
 @import '../blocks/canvas/canvas';
 @import '../blocks/sidebar/sidebar';
