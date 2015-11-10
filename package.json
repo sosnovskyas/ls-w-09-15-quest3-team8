@@ -1,0 +1,43 @@
+{
+  "name": "ls-w-09-15-quest3-team8",
+  "version": "0.0.1",
+  "description": "watermark generator",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.5.3",
+    "browser-sync": "^2.9.4",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-changed": "^1.3.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect-php": "0.0.5",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp.spritesmith": "^4.1.0",
+    "modernizr": "^3.1.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.3"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosnovskyas/ls-w-09-15-quest3-team8.git"
+  },
+  "keywords": [
+    "watermark"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sosnovskyas/ls-w-09-15-quest3-team8/issues"
+  },
+  "homepage": "https://github.com/sosnovskyas/ls-w-09-15-quest3-team8#readme"
+}
