@@ -11,7 +11,9 @@ body
         // Main Content
         .main
             .container
-                include ../blocks/canvas/canvas
-                include ../blocks/sidebar/sidebar  
+                .main-content
+                    h1.main-content__header Генератор водяных знаков
+                    include ../blocks/canvas/canvas
+                include ../blocks/sidebar/sidebar
         include ../blocks/footer/footer
     script(src='custom.js')
