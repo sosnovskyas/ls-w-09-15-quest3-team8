@@ -51,8 +51,19 @@ $('.position-blocks__link').on('click', function(e){
     'top': v_size + 158,
     'left': 0
   }); break;
+  case 'bottom-center':
+  canvas_watermark.css({
+  'top': v_size + 158,
+  'left': h_size + 25
+  }); break;
+  case 'bottom-right':
+  canvas_watermark.css({
+  'top': v_size + 158,
+  'left': top_right
+  }); break;
 
-}
+
+  }
 
 
 });
