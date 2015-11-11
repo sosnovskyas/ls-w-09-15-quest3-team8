@@ -6,15 +6,13 @@
 /*
     VARIABLES
 */
-//$browser-context: 16px;
-//$footer-height: 80px;
+
 
 
 /*
     IMPORTS
 */
 
-//noinspection CssUnknownTarget
 @import "compass";
 
 /*
@@ -33,20 +31,63 @@
     }
 }
 
+/*
+    BASIC
+*/
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
 
 /*
     STYLES
 */
-html,
-body{
-    height: 100%;
-    width: 100%;
+
+html {
+    position: relative; 
+    min-height: 100%;      
 }
 
 body {
     font-family: robotolight;
-    background: url("i/bg.png") repeat 0 0 #d6ba9d;    
-    background-size: cover;
+    margin-bottom: 61px;
+    background: url("i/bg.jpg") no-repeat 0 0 #d6ba9d;    
+    background-size: cover;    
 }
 
 .container {
@@ -55,12 +96,82 @@ body {
 }
 
 .main {
-    padding-top: 60px;
+    padding: 60px 0;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    float: left;
+    width: 700px;
+    padding: 25px;
+    box-sizing: border-box;
+    background: url("i/bg_main-content.jpg") no-repeat 0 0 #6a6563;
+    background-size: cover;   
+}
+
+.main-content__header {
+    color: #fff;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0 0 60px 0;
+}
+
+/*
+    HELPER CLASSES
+*/
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+input, textarea {
+    outline: none;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
 }
 
 
 /*
-    includes
+    INCLUDES
 */
 @import '../blocks/canvas/canvas';
 @import '../blocks/sidebar/sidebar';
