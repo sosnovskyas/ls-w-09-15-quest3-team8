@@ -1,11 +1,11 @@
 $(document).ready(function() {
   // watermark parametrs
-  var watermark = $('#canvas__watermark');
+  var watermark = $('#canvas_watermark');
   var watermarkWidth = parseInt(watermark.css('width'));
   var watermarkHeight = parseInt(watermark.css('height'));
 
   // canvas parametrs
-  var canvas = $('#canvas');
+  var canvas = $('#canvas_img');
   var canvasWidth = parseInt(canvas.css('width'));
   var canvasHeight = parseInt(canvas.css('height'));
 
@@ -15,8 +15,7 @@ $(document).ready(function() {
 
   var spinnerX = $('#spinner_x').spinner({
     min: 0,
-    max: spinnerXMax,
-    value: watermark.css('')
+    max: spinnerXMax
   });
   var spinnerY = $('#spinner_y').spinner({
     min: 0,
@@ -38,6 +37,4 @@ $(document).ready(function() {
       top: currentVal + 'px'
     });
   });
-
-  console.log('test');
 });
