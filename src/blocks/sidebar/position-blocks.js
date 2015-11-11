@@ -1,16 +1,20 @@
 (function () {
 $('.position-blocks__link').on('click', function(e){
   e.preventDefault();
-    var $this = $(this),
-   position = $this.data('position'),
+  var $this = $(this),
+  position = $this.data('position'),
   canvas_watermark = $('#canvas_watermark'),
   canvas = canvas_watermark.parent('#canvas'),
-  canvas_hor = canvas.width(),
-  canvas_ver = canvas.height(),
-  h_size = Math.floor(canvas_hor / 3),
-  v_size = Math.floor(canvas_ver / 3);
+  canvas_hor = canvas.width(), // по горизонтали 650
+  canvas_ver = canvas.height(), // по вертикали 535
+  h_size = Math.floor(canvas_hor / 3), // 216
+  v_size = Math.floor(canvas_ver / 3); // 178
   // Первое время будет порядочно консоль-логов, для проверки. Потом уберу!
   console.log(position + ' ' + canvas);
+  console.log('');
+  console.log(canvas_hor);
+  console.log(canvas_ver);
+  console.log('');
   console.log(h_size);
   console.log(v_size);
   var top_right = h_size + 234; // пока не понимаю как можно запрограммировать расчет 234
