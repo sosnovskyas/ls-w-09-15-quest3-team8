@@ -7,7 +7,9 @@
     VARIABLES
 */
 
-
+$font-segoeuilight: 'SegoeUILight', 'Arial', sans-serif;
+$font-robotolight: 'robotolight', 'Arial', sans-serif;
+$font-robotomedium: 'robotomedium', 'Arial', sans-serif;
 
 /*
     IMPORTS
@@ -80,11 +82,12 @@ textarea {
 
 html {
     position: relative; 
-    min-height: 100%;      
+    min-height: 100%;
+    line-height: 1.4;
 }
 
 body {
-    font-family: robotolight;
+    font-family: $font-robotolight;
     margin-bottom: 61px;
     background: url("i/bg.jpg") no-repeat 0 0 #d6ba9d;    
     background-size: cover;    
@@ -104,14 +107,16 @@ body {
 .main-content {
     float: left;
     width: 700px;
-    padding: 25px;
+    padding: 15px 25px;
     box-sizing: border-box;
     background: url("i/bg_main-content.jpg") no-repeat 0 0 #6a6563;
     background-size: cover;   
 }
 
 .main-content__header {
+    font-family: $font-segoeuilight;
     color: #fff;
+    line-height: 36px;
     font-size: 36px;
     font-weight: normal;
     margin: 0 0 60px 0;
