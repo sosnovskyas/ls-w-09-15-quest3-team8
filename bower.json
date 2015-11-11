@@ -1,0 +1,23 @@
+{
+  "name": "ls-w-09-15-quest3-team8",
+  "description": "watermark generator",
+  "main": "gulpfile.js",
+  "license": "ISC",
+  "keywords": [
+    "watermark"
+  ],
+  "homepage": "https://github.com/sosnovskyas/ls-w-09-15-quest3-team8",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-scss": "~3.0.3",
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4"
+  }
+}

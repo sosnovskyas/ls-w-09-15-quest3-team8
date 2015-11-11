@@ -1,0 +1,37 @@
+// Sidebar
+aside.main-sidebar
+    h2.main-sidebar__header Настройки
+    form.setting__form(action="watermark.php" method="post")
+    ul.settings__list
+        // Upload Image
+        li.upload-image
+            label.upload-image__label
+                h3.upload-image__header Исходное изображение
+                .upload-image__file
+                input.upload-image__input(type="file" name="")
+                input.upload-image__fake-input(type="text" name="")
+                .upload-image__file-icon
+        // Upload Watermark
+        li.upload-watermark
+            h3.upload-watermark__header Водяной знак
+            .upload-watermark__file
+            input.upload-watermark__input(type="file" name="")
+            input.upload-watermark__fake-input(type="text" name="")
+            .upload-watermark__file-icon
+        // Set Position 
+        li.settings__position
+            h3.position__header Положение
+            .position-blocks
+                .position-blocks__wrapper
+                    ul.position-blocks__list
+                        li.position-blocks__item(data-position="top-left")
+                        li.position-blocks__item(data-position="top-center")
+                        li.position-blocks__item(data-position="top-right")
+                        li.position-blocks__item(data-position="middle-left")
+                        li.position-blocks__item(data-position="middle-center")
+                        li.position-blocks__item(data-position="middle-right")
+                        li.position-blocks__item(data-position="bottom-left")
+                        li.position-blocks__item(data-position="bottom-center") 
+                        li.position-blocks__item(data-position="bottom-right") 
+            .position-coords
+

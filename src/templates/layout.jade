@@ -1,0 +1,17 @@
+doctype html
+head
+    include head
+body
+  <!--[if lt IE 8]>
+  <p class="chromeframe"> Вы используете устаревший браузер </p>
+  <![endif]-->
+
+// Page Wrapper
+.wrapper
+        // Main Content
+        .main
+            .container
+                include ../blocks/canvas/canvas
+                include ../blocks/sidebar/sidebar  
+        include ../blocks/footer/footer
+    script(src='custom.js')
