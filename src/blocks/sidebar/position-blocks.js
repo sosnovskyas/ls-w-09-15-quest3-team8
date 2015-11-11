@@ -16,33 +16,43 @@ $('.position-blocks__link').on('click', function(e){
   var top_right = h_size + 234; // пока не понимаю как можно запрограммировать расчет 234
   console.log(top_right);
   switch (position) {
-    case 'top-left':
+  case 'top-left':
     canvas_watermark.css({
-      'top': 0,
-      'left': 0
-    }); break;
-    case 'top-center':
+    'top': 0,
+    'left': 0
+  }); break;
+  case 'top-center':
     canvas_watermark.css({
-      'top': 0,
-      'left': h_size + 25
-    }); break;
-    case 'top-right':
+    'top': 0,
+    'left': h_size + 25
+  }); break;
+  case 'top-right':
     canvas_watermark.css({
-      'top': 0,
-      'left': top_right
-    }); break;
-    case 'middle-left':
+    'top': 0,
+    'left': top_right
+  }); break;
+  case 'middle-left':
     canvas_watermark.css({
+    'top': v_size,
+    'left': 0
+  }); break;
+  case 'middle-center':
+  canvas_watermark.css({
       'top': v_size,
-      'left': 0
-    }); break;
-      case 'bottom-left':
-      canvas_watermark.css({
-          'top': v_size + 158,
-          'left': 0
-      }); break;
+      'left': h_size + 25
+  }); break;
+  case 'middle-right':
+  canvas_watermark.css({
+      'top': v_size,
+      'left': top_right
+  }); break;
+  case 'bottom-left':
+    canvas_watermark.css({
+    'top': v_size + 158,
+    'left': 0
+  }); break;
 
-  }
+}
 
 
 });
