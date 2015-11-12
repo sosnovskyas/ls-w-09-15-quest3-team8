@@ -11,7 +11,7 @@
         slide: function(event, ui) {
           var opacity_val = (ui.value) / 100;
 
-          $("#canvas_watermark").css({
+          $("#canvas__watermark").css({
             opacity: opacity_val
           })
         }
