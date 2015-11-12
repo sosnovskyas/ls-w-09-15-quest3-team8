@@ -11,9 +11,13 @@ $('.position-blocks__link').on('click', function(e){
   v_size = Math.floor(canvas_ver / 3); // 178
   // СДВИГАЕМ
   var top_right = h_size + (h_size / 0.9), // 456
-      centr = h_size + 25,
-      bottm = v_size + 158; // пока не понимаю как можно запрограммировать расчет этих коэфф
+      centr = h_size + (h_size / 8.64), // 241
+      bottm = v_size + (v_size / 1.126); // 336.0817051509769
 
+
+   // пока не понимаю как можно запрограммировать расчет этих коэфф
+
+  console.log(bottm);
 
   switch (position) {
   case 'top-left':
