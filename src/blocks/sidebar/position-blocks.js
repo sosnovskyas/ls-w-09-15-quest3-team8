@@ -2,13 +2,13 @@
 $('.position-blocks__link').on('click', function(e){
   e.preventDefault();
   var $this = $(this),
-  position = $this.data('position'),
-  canvas_watermark = $('#canvas_watermark'),
-  canvas = canvas_watermark.parent('#canvas'),
-  canvas_hor = canvas.width(), // по горизонтали 650
-  canvas_ver = canvas.height(), // по вертикали 535
-  h_size = Math.floor(canvas_hor / 3), // 216
-  v_size = Math.floor(canvas_ver / 3); // 178
+    position = $this.data('position'),
+    canvas_watermark = $('#canvas_watermark'),
+    canvas = canvas_watermark.parent('#canvas'),
+    canvas_hor = canvas.width(), // по горизонтали 650
+    canvas_ver = canvas.height(), // по вертикали 535
+    h_size = Math.floor(canvas_hor / 3), // 216
+    v_size = Math.floor(canvas_ver / 3); // 178
   // СДВИГАЕМ
   var top_right = h_size + (h_size / 0.9), // 456
       centr = h_size + (h_size / 8.64), // 241
@@ -16,8 +16,6 @@ $('.position-blocks__link').on('click', function(e){
 
 
    // пока не понимаю как можно запрограммировать расчет этих коэфф
-
-  console.log(bottm);
 
   switch (position) {
   case 'top-left':
