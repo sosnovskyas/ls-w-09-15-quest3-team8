@@ -1,15 +1,21 @@
 (function () {
+
+  // Общие переменные
+  var spinner_x = $('#spinner_x'),
+      spinner_y = $('#spinner_y'),
+      canvas_watermark = $('#canvas_watermark');
+
 $('.position-blocks__link').on('click', function(e){
   e.preventDefault(); // убираем стандартную реакцию браузера на ссылки
   var $this = $(this), // ссылка по которой мы кликнули (то есть квадратик)
     position = $this.data('position'), // получаем информацию о положении из разметки
 
   // Для вывода координат в инпуты X и Y возьмем эти инпуты
-    spinner_x = $('#spinner_x'),
-    spinner_y = $('#spinner_y'),
+  // spinner_x = $('#spinner_x'),
+  // spinner_y = $('#spinner_y'),
 
   // Поработаем с картинками
-    canvas_watermark = $('#canvas_watermark'), // возьмем вотермарк чтобы двигать его
+    // canvas_watermark = $('#canvas_watermark'), // возьмем вотермарк чтобы двигать его
     canvas = canvas_watermark.parent('#canvas'), // возьмем сам канвас для расчета ширины и высоты
     canvas_hor = canvas.width(), // по горизонтали 650
     canvas_ver = canvas.height(), // по вертикали 535
@@ -103,6 +109,16 @@ $('.position-blocks__link').on('click', function(e){
 });
 
 
+// На всякий сделаю событие по кнопке сбросить. Не надо будет - удалю
 
+$('.setting__form').on('reset', function(e){
+  e.preventDefault();
+  canvas_watermark.css({
+    'top': 0,
+    'left': 0
+  });
+  spinner_x.val(0);
+  spinner_y.val(0);
+});
 
 }());
