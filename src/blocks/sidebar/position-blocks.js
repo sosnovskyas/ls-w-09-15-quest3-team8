@@ -15,8 +15,6 @@ $('.position-blocks__link').on('click', function(e){
       bottm = v_size + (v_size / 1.126); // 336.0817051509769
 
 
-   // пока не понимаю как можно запрограммировать расчет этих коэфф
-
   switch (position) {
   case 'top-left':
     canvas_watermark.css({
