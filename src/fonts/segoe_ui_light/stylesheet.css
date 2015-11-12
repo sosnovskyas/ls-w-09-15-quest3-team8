@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "SegoeUILight";
+    src: url("SegoeUILight.eot");
+    src: url("SegoeUILight.eot?#iefix")format("embedded-opentype"),
+    url("SegoeUILight.woff") format("woff"),
+    url("SegoeUILight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
