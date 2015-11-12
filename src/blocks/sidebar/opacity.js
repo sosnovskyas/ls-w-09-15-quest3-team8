@@ -2,7 +2,7 @@
   'use strict';
   $(document).ready(function() {
     $(function() {
-      $("#opacity-slider").slider({
+      $("#opacity__slider").slider({
         orientation: "horizontal",
         range: "min",
         min: 0,
