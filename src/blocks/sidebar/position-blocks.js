@@ -9,16 +9,12 @@ $('.position-blocks__link').on('click', function(e){
   canvas_ver = canvas.height(), // по вертикали 535
   h_size = Math.floor(canvas_hor / 3), // 216
   v_size = Math.floor(canvas_ver / 3); // 178
-  // Первое время будет порядочно консоль-логов, для проверки. Потом уберу!
-  console.log(position + ' ' + canvas);
-  console.log('');
-  console.log(canvas_hor);
-  console.log(canvas_ver);
-  console.log('');
-  console.log(h_size);
-  console.log(v_size);
-  var top_right = h_size + 234; // пока не понимаю как можно запрограммировать расчет 234
-  console.log(top_right);
+  // СДВИГАЕМ
+  var top_right = h_size + (h_size / 0.9), // 456
+      centr = h_size + 25,
+      bottm = v_size + 158; // пока не понимаю как можно запрограммировать расчет этих коэфф
+
+
   switch (position) {
   case 'top-left':
     canvas_watermark.css({
@@ -28,7 +24,7 @@ $('.position-blocks__link').on('click', function(e){
   case 'top-center':
     canvas_watermark.css({
     'top': 0,
-    'left': h_size + 25
+    'left': centr
   }); break;
   case 'top-right':
     canvas_watermark.css({
@@ -42,32 +38,30 @@ $('.position-blocks__link').on('click', function(e){
   }); break;
   case 'middle-center':
   canvas_watermark.css({
-      'top': v_size,
-      'left': h_size + 25
+    'top': v_size,
+    'left': centr
   }); break;
   case 'middle-right':
   canvas_watermark.css({
-      'top': v_size,
-      'left': top_right
+    'top': v_size,
+    'left': top_right
   }); break;
   case 'bottom-left':
-    canvas_watermark.css({
-    'top': v_size + 158,
+  canvas_watermark.css({
+    'top': bottm,
     'left': 0
   }); break;
   case 'bottom-center':
   canvas_watermark.css({
-  'top': v_size + 158,
-  'left': h_size + 25
+    'top': bottm,
+    'left': centr
   }); break;
   case 'bottom-right':
   canvas_watermark.css({
-  'top': v_size + 158,
-  'left': top_right
+    'top': bottm,
+    'left': top_right
   }); break;
-
-
-  }
+}
 
 
 });
