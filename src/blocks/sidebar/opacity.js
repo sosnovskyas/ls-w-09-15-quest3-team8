@@ -1,22 +1,35 @@
-;(function() {
-  'use strict';
-  $(document).ready(function() {
-    $(function() {
-      $("#opacity__slider").slider({
-        orientation: "horizontal",
-        range: "min",
-        min: 0,
-        max: 100,
-        value: 100,
-        slide: function(event, ui) {
-          var opacity_val = (ui.value) / 100;
+var opacityModule = (function(){
+  var init = function(){
+    _setUpListners();
+  };
 
-          $("#canvas__watermark").css({
-            opacity: opacity_val
-          })
-        }
-      });
-      $("#amount").val($("#slider").slider("value"));
+  var _setUpListners = function(){
+    _changeOpacity();
+  };
+
+  var opacitySlider = $('#opacity__slider'),
+      canvas = $('#canvas_watermark'),
+      opacityInput = $('#opacity__input');
+
+
+  var _changeOpacity = function(){
+    opacitySlider.slider({
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 100,
+      step: 0.05,
+      slide: function (event, ui) {
+        var opacity_val = (ui.value)/100;
+
+        canvas.css('opacity', opacity_val);
+        opacityInput.val(ui.value + "%")
+      }
     });
-  });
+  };
+
+  return {
+    init: init
+  };
 })();
+opacityModule.init();
