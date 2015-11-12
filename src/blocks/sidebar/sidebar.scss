@@ -1,7 +1,7 @@
 /* MAIN SIDEBAR */
 
 .main-sidebar {
-  float: left;
+  display: table-cell;
   width: 260px;
   background-color: #f1f1f5;
   padding: 25px 0 20px 0;
@@ -23,7 +23,7 @@
 
 .settings__list {
   list-style: none;
-  margin: 0;
+  margin: 0 0 58px 0;
   padding: 0;
 }
 
@@ -182,8 +182,9 @@
 
 /* position */
 
-.settings__position {
-
+.position__wrapper {
+  padding-top: 28px;
+  margin-bottom: 25px;
 }
 
 .position__header {
@@ -223,6 +224,9 @@
   border-top: 1px solid #9eb2c0;
   box-sizing: border-box;
   margin: -1px 0 0 -1px;
+  @include transition-property(background);
+  @include transition-duration(100ms);
+  @include transition-timing-function(ease-out);   
 
   &:hover {
     background-color: #f97e76;            
@@ -231,7 +235,11 @@
 
 .position-coords {
   width: 50%;
-  float: left;   
+  float: left;
+}
+
+.position-coords__label {
+  text-align: right;
 }
 
 .position-coords__input {
@@ -248,30 +256,99 @@
   @include border-radius(4px);  
 }
 
-.position-coords__label {
-  text-align: center;
+.ui-spinner {
+
 }
+
+/* slider */
+
+.opacity__header {
+  font-family: $font-robotolight;  
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 0 7px 0;  
+}
+
+.opacity__container {
+  padding-top: 20px;
+  height: 24px;
+}
+
+.opacity__slider {
+  clear: both;
+}
+
+.ui-slider-horizontal {
+  position: relative;
+  height: 3px;
+  background-color: #dbe1e8;
+
+  .ui-slider-range {
+    height: 3px;
+    background-color: #9eb2c0;
+  }
+}
+
+.ui-slider-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;  
+  top: -10px;
+  margin-left: -12px;
+  z-index: 2;
+  background-color: #9eb2c0;
+  @include border-radius(100%);  
+  border: 7px solid #dbe1e8;
+  @include box-shadow(0px 1px 1px 1px #ccc);
+  outline: none;
+  @include transition-property(background);
+  @include transition-duration(100ms);
+  @include transition-timing-function(ease-out);    
+
+  &.ui-state-hover {
+    cursor: pointer;
+    border-color: darken(#dbe1e8, 2%);
+    background-color: lighten(#9eb2c0, 3%);
+  } 
+}
+
 
 
 /* buttons */
 
 .settings__buttons {
-  padding: 0 20px 0 20px;  
+  padding: 0 10px 0 10px;  
 }
 
 .settings__btn {
+  font-size: 18px;
+  width: auto;
+  min-width: 100px;
+  max-width: 200px;
   color: #fff;
   border: 0;
-  padding: 5px 10px;
+  padding: 9px 10px 9px 10px;
   font-weight: bold;
+  @include border-radius(3px);
+  @include transition-property(background);
+  @include transition-duration(100ms);
+  @include transition-timing-function(ease-out);    
 }
 
 .settings__btn_reset {
   float: left;
   background-color: #c1cfd9;
+
+  &:hover {
+    background-color: darken(#c1cfd9, 10%);
+  }
 }
 
 .settings__btn_download {
   float: right;    
   background-color: #f97e76;
+
+  &:hover {
+    background-color: darken(#f97e76, 10%);
+  }
 }

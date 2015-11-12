@@ -52,8 +52,10 @@ aside.main-sidebar
       // Set Opacity
       li.settings__item.settings__opacity
         h3.opacity__header Прозрачность
-        #opacity__slider.opacity__slider
+        .opacity__container
+          input#opacity__input.opacity__input(type="hidden" name="opacity")
+          #opacity__slider.opacity__slider
     // Buttons
     .settings__buttons.clearfix
-      input.settings__btn.settings__btn_reset(type="reset" value="Сбросить")
+      input.settings__btn.settings__btn_reset(type="reset" value="Сброс")
       input.settings__btn.settings__btn_download(type="submit" value="Скачать")
