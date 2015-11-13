@@ -26,6 +26,14 @@
   margin: auto;
 }
 
+.canvas__watermark-container {
+  position: absolute;
+  width: 650px;
+  height: 535px;
+  top: 0;
+  left: 0;
+}
+
 .canvas__watermark {
   position: absolute;
   left: 100px;
