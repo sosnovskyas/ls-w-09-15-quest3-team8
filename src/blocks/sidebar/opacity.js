@@ -8,7 +8,7 @@ var opacityModule = (function(){
   };
 
   var opacitySlider = $('#opacity__slider'),
-      canvas = $('#canvas_watermark'),
+      canvas = $('#canvas__watermark'),
       opacityInput = $('#opacity__input');
 
 
