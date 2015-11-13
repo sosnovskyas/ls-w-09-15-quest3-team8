@@ -31,13 +31,22 @@
         //watermark.css({
         //  left: currentVal + 'px'
         //});
-      });
-    spinnerY.on('spin', function(event, ui) {
+      })
+      .on('input', function(e) {
+        watermark.x = e.currentTarget.value;
+      })
+    ;
+    spinnerY
+      .on('spin', function(event, ui) {
       var currentVal = ui.value;
       watermark.y = currentVal;
       //watermark.css({
       //  top: currentVal + 'px'
       //});
-    });
+      })
+      .on('input', function(e) {
+        watermark.x = e.currentTarget.value;
+      })
+    ;
   });
 })();
