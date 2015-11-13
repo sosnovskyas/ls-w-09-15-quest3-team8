@@ -10,5 +10,7 @@
     }
   ],
 
-  "require": "smottt/wideimage"
+  "require": {
+    "smottt/wideimage": "dev-master"
+  }
 }
