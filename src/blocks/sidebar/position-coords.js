@@ -1,4 +1,5 @@
-;(function() {
+;
+var positionCoordsModule = (function() {
   'use strict';
   $(document).ready(function() {
     // watermark parametrs
