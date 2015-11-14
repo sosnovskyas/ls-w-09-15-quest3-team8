@@ -1,10 +1,9 @@
 var canvasWidth = 650;
 var canvasHeight = 535;
-var canvasScale = 1;
 
 var backgroundWidth = 0;
 var backgroundHeight = 0;
-var canvasScale = 1;
+var backgroundScale = 1;
 
 var watermarkWidth = 0;
 var watermarkHeight = 0;
@@ -35,7 +34,8 @@ function returnScale(w1,h1,w2,h2){
   }
   return {
     w: Math.floor(w),
-    h: Math.floor(h)
+    h: Math.floor(h),
+    s: s2/s1
   }
 }
 
@@ -47,9 +47,18 @@ function getBgFile(input) {
       $('.upload-image__fake-input').val(input.files[0].name);
 
       bgImage.onload = function() {
-        bg = returnScale(canvasWidth, canvasHeight, bgImage.width, bgImage.height);
-        backgroundWidth = bg.w;
-        backgroundHeight = bg.h;
+        if((bgImage.width > canvasWidth)||(bgImage.height > canvasHeight)){
+          bg = returnScale(canvasWidth, canvasHeight, bgImage.width, bgImage.height);
+          backgroundWidth = bg.w;
+          backgroundHeight = bg.h;
+          backgroundScale = bg.s;
+        } else {
+          backgroundWidth = bgImage.width;
+          backgroundHeight = bgImage.height;
+        }
+
+        console.log(backgroundScale);
+
 
         $('#canvas__img')
           .attr('src', e.target.result)
@@ -70,9 +79,22 @@ function getWatermarkFile(input) {
       $('.upload-watermark__fake-input').val(input.files[0].name);
 
       wmImage.onload = function() {
-        wm = returnScale(backgroundWidth, backgroundHeight, wmImage.width, wmImage.height);
-        watermarkWidth = wm.w;
-        watermarkHeight = wm.h;
+        if((backgroundScale < 1) && ((wmImage.width*backgroundScale > backgroundWidth)||(wmImage.height*backgroundScale >backgroundHeight))){
+          console.log('FUCK', backgroundScale);
+          wm = returnScale(backgroundWidth, backgroundHeight, wmImage.width*backgroundScale, wmImage.height*backgroundScale);
+          watermarkWidth = wm.w;
+          watermarkHeight = wm.h;
+          watermarkScale = wm.s;
+        } else if((backgroundWidth < wmImage.width)||(backgroundHeight < wmImage.height )){
+          wm = returnScale(backgroundWidth, backgroundHeight, wmImage.width, wmImage.height);
+          watermarkWidth = wm.w;
+          watermarkHeight = wm.h;
+          watermarkScale = wm.s;
+        } else {
+          watermarkWidth = wmImage.width;
+          watermarkHeight = wmImage.height;
+          console.log(watermarkScale);
+        }
 
         $('#canvas__watermark')
           .attr('src', e.target.result)
