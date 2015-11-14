@@ -48,17 +48,22 @@ function getBgFile(input) {
 
       bgImage.onload = function() {
         if((bgImage.width > canvasWidth)||(bgImage.height > canvasHeight)){
+          // если фоновая картинка больше канвы - масштабируем
           bg = returnScale(canvasWidth, canvasHeight, bgImage.width, bgImage.height);
           backgroundWidth = bg.w;
           backgroundHeight = bg.h;
           backgroundScale = bg.s;
+
+          console.log('фон больше канвы ',backgroundScale);
+
         } else {
+          // если меньше канвы оставляем всё как есть
           backgroundWidth = bgImage.width;
           backgroundHeight = bgImage.height;
+
+          console.log('фон меньше канвы ',backgroundScale);
+
         }
-
-        console.log(backgroundScale);
-
 
         $('#canvas__img')
           .attr('src', e.target.result)
@@ -80,20 +85,39 @@ function getWatermarkFile(input) {
 
       wmImage.onload = function() {
         if((backgroundScale < 1) && ((wmImage.width*backgroundScale > backgroundWidth)||(wmImage.height*backgroundScale >backgroundHeight))){
-          console.log('FUCK', backgroundScale);
+          // если фоновая картинка уменьшалась И!!! смасштабированный ватермарк больше уменьшенного фона
+          console.log(backgroundScale);
           wm = returnScale(backgroundWidth, backgroundHeight, wmImage.width*backgroundScale, wmImage.height*backgroundScale);
           watermarkWidth = wm.w;
           watermarkHeight = wm.h;
           watermarkScale = wm.s;
+
+          console.log('фон уменьшался, ватермарк НЕ ВМЕЩАЕТСЯ',backgroundScale);
+
+        } else if(backgroundScale < 1){
+          // если фон масштабировался НО!!! ватермарк не больше фона как было выше
+          // уменьшаем размер ватермарка на коэффициент
+          watermarkWidth = wmImage.width*backgroundScale;
+          watermarkHeight = wmImage.height*backgroundScale;
+
+          console.log('фон уменьшался, ватермарк вмещается',watermarkScale, 'и масштабируется к фону', backgroundScale);
+
         } else if((backgroundWidth < wmImage.width)||(backgroundHeight < wmImage.height )){
+          // если фон не масштабировался и ватермарк больше фона - масштабируем
           wm = returnScale(backgroundWidth, backgroundHeight, wmImage.width, wmImage.height);
           watermarkWidth = wm.w;
           watermarkHeight = wm.h;
           watermarkScale = wm.s;
+
+          console.log('фон не масштабировался',backgroundScale ,' ватермарк БОЛЬШЕ ФОНА ',watermarkScale);
+
         } else {
+          //
           watermarkWidth = wmImage.width;
           watermarkHeight = wmImage.height;
-          console.log(watermarkScale);
+
+          console.log('фон не масштабировался',backgroundScale ,' ватермарк не масштабировался ',watermarkScale);
+
         }
 
         $('#canvas__watermark')
