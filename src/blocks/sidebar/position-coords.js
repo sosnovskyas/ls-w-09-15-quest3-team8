@@ -1,12 +1,13 @@
 ;
 var positionCoordsModule = (function() {
   'use strict';
-  $(document).ready(function() {
+  $(window).load(function() {
     // watermark parametrs
     var watermark = $('#canvas__watermark');
     var watermarkWidth = parseInt(watermark.css('width'));
     var watermarkHeight = parseInt(watermark.css('height'));
 
+    console.log(watermark.css('width'));
     // canvas parametrs
     var canvas = $('#canvas__img');
     var canvasWidth = parseInt(canvas.css('width'));
