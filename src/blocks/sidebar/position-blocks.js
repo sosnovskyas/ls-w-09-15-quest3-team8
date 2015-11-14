@@ -12,94 +12,89 @@ $('.position-blocks__link').on('click', function(e){
   var $this = $(this),
     position = $this.data('position'),
     canvas_container = $('#canvas__watermark-container'),
-    canvas_width = canvas_container.width(),
-    canvas_height = canvas_container.height(),
+    canvas_width = canvas_container.width(), // 650
+    canvas_height = canvas_container.height(), // 433
     middle_left = parseInt(canvas_width / 2),
     middle_top = parseInt(canvas_height / 2);
 
 
+    canvas_container.css('position', 'absolute');
 
-     //h_size = Math.floor(canvas_hor / 3),
-    //v_size = Math.floor(canvas_ver / 3);
 
-  /*var top_right = h_size + ((h_size / 0.9) - 6),
-      centr = h_size + (h_size / 8.64),
-      bottm = v_size + (v_size / 1.126),
-      bottm_round = Math.floor(bottm);*/
 
   switch (position) {
     case 'top-left':
     canvas_watermark.css({
-    'top': 0,
-    'left': 0
+    'top': 0,  // y
+    'left': 0 // x
   });
-    // Пока нз что сюда заносить :(((
+    // Как бы их программно посчитать
     spinner_x.val(0);
     spinner_y.val(0);
     break;
   case 'top-center':
     canvas_watermark.css({
     'top': 0,
-    'left': middle_left
+    'left': 225 + 'px'
   });
-    spinner_x.val(0);
+    spinner_x.val(225);
     spinner_y.val(0);
     break;
   case 'top-right':
     canvas_watermark.css({
     'top': 0,
-    'right': 0
+    'left': 450 + 'px'
   });
-    spinner_x.val(0);
+    spinner_x.val(450);
     spinner_y.val(0);
     break;
   case 'middle-left':
     canvas_watermark.css({
-    'top': middle_top,
+    'top': 116 + 'px',
     'left': 0
   });
     spinner_x.val(0);
-    spinner_y.val(0);
+    spinner_y.val(116);
     break;
   case 'middle-center':
   canvas_watermark.css({
-    'top': middle_top,
-    'left': middle_left
+    'top': 116 + 'px',
+    'left':225 + 'px'
   });
-  spinner_x.val(0);
-  spinner_y.val(0);
+  spinner_x.val(225);
+  spinner_y.val(116);
   break;
   case 'middle-right':
   canvas_watermark.css({
-    'top': middle_top,
-    'left': middle_left
+    'top': 116 + 'px',
+    'left': 450 + 'px'
   });
-  spinner_x.val(0);
-  spinner_y.val(0);
+  spinner_x.val(450);
+  spinner_y.val(116);
   break;
   case 'bottom-left':
   canvas_watermark.css({
-    'bottom': 0,
+    'top': 233 + 'px',
     'left': 0
   });
   spinner_x.val(0);
-  spinner_y.val(0);
+  spinner_y.val(233);
   break;
   case 'bottom-center':
   canvas_watermark.css({
-    'bottom': 0,
-    'left': middle_left
+    'top': 233 + 'px',
+    'left': 225 + 'px'
   });
-  spinner_x.val(0);
-  spinner_y.val(0);
+  spinner_x.val(225);
+  spinner_y.val(233);
   break;
   case 'bottom-right':
   canvas_watermark.css({
-    'bottom': 0,
-    'right': 0
+    'top': 233 + 'px',
+    'left': 450 + 'px'
   });
-  spinner_x.val(0);
-  spinner_y.val(0);
+  spinner_x.val(450);
+  spinner_y.val(233);
   break;
 }
 
