@@ -113,7 +113,7 @@ body {
 .main-content {
   display: table-cell;
   width: 700px;
-  padding: 15px 25px;
+  padding: 15px 25px 20px 25px;
   box-sizing: border-box;
   background: url("i/bg_main-content.jpg") no-repeat 0 0 #6a6563;
   background-size: cover;   
@@ -126,6 +126,9 @@ body {
   font-size: 36px;
   font-weight: normal;
   margin: 0 0 60px 0;
+  max-width: 650px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*
