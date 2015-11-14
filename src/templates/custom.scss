@@ -33,6 +33,13 @@ $font-robotomedium: 'robotomedium', 'Arial', sans-serif;
   }
 }
 
+@mixin placeholder {   
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content} 
+};
+
 /*
   BASIC
 */
@@ -87,7 +94,7 @@ html {
 
 body {
   font-family: robotolight;
-  margin-bottom: 61px;
+  margin-bottom: 46px;
   background: url("i/bg.jpg") no-repeat 0 0 #d6ba9d;    
   background-size: cover;    
 }
@@ -98,7 +105,7 @@ body {
 }
 
 .main {
-  padding: 60px 0;
+  padding: 60px 0 29px;
 }
 
 /* MAIN CONTENT */
