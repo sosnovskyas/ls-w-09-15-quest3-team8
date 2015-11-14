@@ -101,7 +101,8 @@ $('.setting__form').on('reset', function(e){
   canvas_watermark.css({
     'top': 0,
     'left': 0
-  });
+  }
+  );
   spinner_x.val(0);
   spinner_y.val(0);
 });
