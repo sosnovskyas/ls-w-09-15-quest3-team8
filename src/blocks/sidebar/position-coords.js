@@ -3,12 +3,12 @@ var positionCoordsModule = (function() {
   'use strict';
   $(document).ready(function() {
     // watermark parametrs
-    var watermark = $('#canvas_watermark');
+    var watermark = $('#canvas__watermark');
     var watermarkWidth = parseInt(watermark.css('width'));
     var watermarkHeight = parseInt(watermark.css('height'));
 
     // canvas parametrs
-    var canvas = $('#canvas_img');
+    var canvas = $('#canvas__img');
     var canvasWidth = parseInt(canvas.css('width'));
     var canvasHeight = parseInt(canvas.css('height'));
 
