@@ -4,7 +4,7 @@
   display: table-cell;
   width: 260px;
   background-color: #f1f1f5;
-  padding: 25px 0 20px 0;
+  padding: 25px 0 15px 0;
   box-sizing: border-box;
 }
 
@@ -15,8 +15,13 @@
   font-weight: normal;
   color: #2e3641;
   margin: 0 0 35px 0;
+  padding: 0 20px;
+  box-sizing: border-box;
   text-align: center;
-  font-weight: normal;
+  font-weight: normal;  
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* settings list */
@@ -70,6 +75,9 @@
   font-weight: bold;
   font-size: 14px;
   margin: 0 0 7px 0;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .upload-image__file {
@@ -91,8 +99,9 @@
   font-size: 12px;
   color: #333;
   box-sizing: border-box;
-  padding: 4px 10px;
+  padding: 4px 45px 4px 4px;
   border: 1px solid #9eb2c0;
+  background-color: #F1F1F5;
   @include border-radius(3px);  
 
   @include placeholder {
@@ -143,6 +152,10 @@
   font-weight: bold;
   font-size: 14px;
   margin: 0 0 7px 0;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 .upload-watermark__file {
@@ -164,8 +177,9 @@
   font-size: 12px;
   color: #333;  
   box-sizing: border-box;
-  padding: 4px 10px;
+  padding: 4px 45px 4px 4px;
   border: 1px solid #9eb2c0;
+  background-color: #F1F1F5;
   @include border-radius(3px);
 
   @include placeholder {
@@ -216,6 +230,9 @@
   font-weight: bold;
   font-size: 14px;
   margin: 0 0 7px 0;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .position-blocks {
@@ -359,7 +376,10 @@
   font-family: $font-robotolight;  
   font-weight: bold;
   font-size: 14px;
-  margin: 0 0 7px 0;  
+  margin: 0 0 7px 0;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;    
 }
 
 .opacity__container {
@@ -398,10 +418,11 @@
   @include transition-duration(100ms);
   @include transition-timing-function(ease-out);    
 
-  &.ui-state-hover {
+  &:hover,
+  &.ui-state-active {
     cursor: pointer;
-    border-color: darken(#dbe1e8, 2%);
-    background-color: lighten(#9eb2c0, 3%);
+    background-color: #f97e76;
+    @include box-shadow(0px 1px 2px 1px #ccc);
   } 
 }
 
@@ -417,9 +438,12 @@
   font-size: 18px;
   width: auto;
   min-width: 100px;
-  max-width: 200px;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #fff;
   border: 0;
+  margin-bottom: 10px;
   padding: 9px 10px 9px 10px;
   font-weight: bold;
   @include border-radius(3px);
