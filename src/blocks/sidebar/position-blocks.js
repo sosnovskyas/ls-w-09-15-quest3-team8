@@ -8,16 +8,21 @@ $('.position-blocks__link').on('click', function(e){
   e.preventDefault();
   var $this = $(this),
     position = $this.data('position'),
-    canvas = $('#canvas'),
-    canvas_hor = canvas.width(),
-    canvas_ver = canvas.height(),
-    h_size = Math.floor(canvas_hor / 3),
-    v_size = Math.floor(canvas_ver / 3);
+    canvas_container = $('#canvas__watermark-container'),
+    canvas_width = canvas_container.width(),
+    canvas_height = canvas_container.height(),
+    middle_left = parseInt(canvas_width / 2),
+    middle_top = parseInt(canvas_height / 2);
 
-  var top_right = h_size + ((h_size / 0.9) - 6),
+
+
+     //h_size = Math.floor(canvas_hor / 3),
+    //v_size = Math.floor(canvas_ver / 3);
+
+  /*var top_right = h_size + ((h_size / 0.9) - 6),
       centr = h_size + (h_size / 8.64),
       bottm = v_size + (v_size / 1.126),
-      bottm_round = Math.floor(bottm);
+      bottm_round = Math.floor(bottm);*/
 
   switch (position) {
     case 'top-left':
@@ -31,66 +36,66 @@ $('.position-blocks__link').on('click', function(e){
   case 'top-center':
     canvas_watermark.css({
     'top': 0,
-    'left': centr
+    'left': middle_left
   });
-    spinner_x.val(centr);
+    spinner_x.val(0);
     spinner_y.val(0);
     break;
   case 'top-right':
     canvas_watermark.css({
     'top': 0,
-    'left': top_right
+    'right': 0
   });
-    spinner_x.val(top_right);
+    spinner_x.val(0);
     spinner_y.val(0);
     break;
   case 'middle-left':
     canvas_watermark.css({
-    'top': v_size,
+    'top': middle_top,
     'left': 0
   });
     spinner_x.val(0);
-    spinner_y.val(v_size);
+    spinner_y.val(0);
     break;
   case 'middle-center':
   canvas_watermark.css({
-    'top': v_size,
-    'left': centr
+    'top': middle_top,
+    'left': middle_left
   });
-  spinner_x.val(centr);
-  spinner_y.val(v_size);
+  spinner_x.val(0);
+  spinner_y.val(0);
   break;
   case 'middle-right':
   canvas_watermark.css({
-    'top': v_size,
-    'left': top_right
+    'top': middle_top,
+    'left': middle_left
   });
-  spinner_x.val(top_right);
-  spinner_y.val(v_size);
+  spinner_x.val(0);
+  spinner_y.val(0);
   break;
   case 'bottom-left':
   canvas_watermark.css({
-    'top': bottm,
+    'bottom': 0,
     'left': 0
   });
   spinner_x.val(0);
-  spinner_y.val(bottm_round);
+  spinner_y.val(0);
   break;
   case 'bottom-center':
   canvas_watermark.css({
-    'top': bottm,
-    'left': centr
+    'bottom': 0,
+    'left': middle_left
   });
-  spinner_x.val(centr);
-  spinner_y.val(bottm_round);
+  spinner_x.val(0);
+  spinner_y.val(0);
   break;
   case 'bottom-right':
   canvas_watermark.css({
-    'top': bottm,
-    'left': top_right
+    'bottom': 0,
+    'right': 0
   });
-  spinner_x.val(top_right);
-  spinner_y.val(bottm_round);
+  spinner_x.val(0);
+  spinner_y.val(0);
   break;
 }
 
