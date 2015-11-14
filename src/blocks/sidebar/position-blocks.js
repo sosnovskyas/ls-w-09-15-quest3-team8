@@ -2,6 +2,9 @@
 
   var spinner_x = $('#spinner_x'),
       spinner_y = $('#spinner_y'),
+      opacity_input = $('#opacity__input'), // значение опасити 100
+      ui_slider_range = $('.ui-slider-range'), // полоска на ползунке
+      ui_slider_handle = $('.ui-slider-handle'), // ручка у ползунка
       canvas_watermark = $('#canvas__watermark');
 
 $('.position-blocks__link').on('click', function(e){
@@ -30,6 +33,7 @@ $('.position-blocks__link').on('click', function(e){
     'top': 0,
     'left': 0
   });
+    // Пока нз что сюда заносить :(((
     spinner_x.val(0);
     spinner_y.val(0);
     break;
@@ -105,11 +109,15 @@ $('.setting__form').on('reset', function(e){
   e.preventDefault();
   canvas_watermark.css({
     'top': 0,
-    'left': 0
+    'left': 0,
+    'opacity': 1
   }
   );
   spinner_x.val(0);
   spinner_y.val(0);
+  opacity_input.val(100); // для 100% сброса всех значений!
+  ui_slider_range.css('width', '100%');
+  ui_slider_handle.css('left', '100%');
 });
 
 }());
