@@ -21,13 +21,6 @@ var blocksModule = (function () {
       watermark_path = canvas_watermark.attr('src');
 
 
-  // If there are no images, inputs will be disabled
-
-  if (container_path === '' || watermark_path === '') {
-    $.find('input').attr('disabled', 'disabled');
-  }
-
-
 
   var _blocksChange = function (e) {
     e.preventDefault();
