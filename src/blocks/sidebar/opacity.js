@@ -21,13 +21,11 @@ var opacityModule = (function(){
       step: 0.05,
       slide: function (event, ui) {
         var opacity_val = Math.floor(ui.value)/100;
-
         canvas.css('opacity', opacity_val);
         opacityInput.val(opacity_val);
       }
     });
   };
-
   return {
     init: init
   };
