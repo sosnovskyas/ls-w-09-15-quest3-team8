@@ -24,23 +24,22 @@ var blocksModule = (function () {
     e.preventDefault();
     var $this = $(this),
         position = $this.data('position'),
-        canvas_width = canvas.width(), // 650
-        canvas_height = canvas.height(), // 535
-        canvas_container_height = canvas_container.height(), // 433
-        canvas_watermark_width = canvas_watermark.width(), // 200
-        canvas_watermark_height = canvas_watermark.height(); // 200
+        canvas_width = canvas.width(),
+        canvas_container_height = canvas_container.height(),
+        canvas_watermark_width = canvas_watermark.width(),
+        canvas_watermark_height = canvas_watermark.height();
 
 
-    var x_edge = parseInt(canvas_width - canvas_watermark_width), // 450
-        x_half = x_edge / 2, // 225
-        y_edge = parseInt(canvas_container_height - canvas_watermark_height), // 233
-        y_half = Math.floor(y_edge / 2); // 116
+    var x_edge = parseInt(canvas_width - canvas_watermark_width),
+        x_half = x_edge / 2,
+        y_edge = parseInt(canvas_container_height - canvas_watermark_height),
+        y_half = Math.floor(y_edge / 2);
 
     switch (position) {
       case 'top-left':
         canvas_watermark.css({
-          'top': 0,  // y
-          'left': 0 // x
+          'top': 0,
+          'left': 0
         });
         spinner_x.val(0);
         spinner_y.val(0);
