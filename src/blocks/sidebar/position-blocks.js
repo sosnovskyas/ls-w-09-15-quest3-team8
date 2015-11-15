@@ -12,24 +12,28 @@ var blocksModule = (function () {
   var spinner_x = $('#spinner_x'),
       spinner_y = $('#spinner_y'),
       opacity_input = $('#opacity__input'),
+      canvas = $('#canvas'),
+      canvas_container = $('#canvas__watermark-container'),
       ui_slider_range = $('.ui-slider-range'),
       ui_slider_handle = $('.ui-slider-handle'),
       canvas_watermark = $('#canvas__watermark');
+
 
 
   var _blocksChange = function (e) {
     e.preventDefault();
     var $this = $(this),
         position = $this.data('position'),
-        canvas_container = $('#canvas__watermark-container'),
-        canvas_width = (canvas_container.width() - 51), // 650
-        canvas_height = canvas_container.height(); // 433
+        canvas_width = canvas.width(), // 650
+        canvas_height = canvas.height(), // 535
+        canvas_container_height = canvas_container.height(), // 433
+        canvas_watermark_width = canvas_watermark.width(), // 200
+        canvas_watermark_height = canvas_watermark.height(); // 200
 
-     // TODO: FIND OUT HOW TO FIND X-EDGE & Y-EDGE using calculations
 
-    var x_edge = 450,
+    var x_edge = parseInt(canvas_width - canvas_watermark_width), // 450
         x_half = x_edge / 2, // 225
-        y_edge = 233,
+        y_edge = parseInt(canvas_container_height - canvas_watermark_height), // 233
         y_half = Math.floor(y_edge / 2); // 116
 
     switch (position) {
