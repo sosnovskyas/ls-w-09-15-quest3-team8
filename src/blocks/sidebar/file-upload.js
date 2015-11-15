@@ -133,8 +133,3 @@ function getWatermarkFile(input) {
     wmFile.readAsDataURL(input.files[0]);
   }
 }
-
-function downloadResult(e){
-  e.preventDefault();
-  console.log('helo');
-}
