@@ -19,6 +19,7 @@ var opacityModule = (function(){
       max: 100,
       value: 100,
       step: 0.05,
+      disabled: true,
       slide: function (event, ui) {
         var opacity_val = Math.floor(ui.value)/100;
         canvas.css('opacity', opacity_val);
