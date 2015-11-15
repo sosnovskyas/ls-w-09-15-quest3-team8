@@ -57,5 +57,9 @@ aside.main-sidebar
           #opacity__slider.opacity__slider
     // Buttons
     .settings__buttons.clearfix
+
+      input#bgFile(type="text", name='bgFile', hidden)
+      input#wmScale(type="text", name='wmScale', hidden)
+      input#wmFile(type="text", name='wmFile', hidden)
       input.settings__btn.settings__btn_reset(type="reset" value="Сброс")
       input.settings__btn.settings__btn_download#download(type="submit", value="Скачать")

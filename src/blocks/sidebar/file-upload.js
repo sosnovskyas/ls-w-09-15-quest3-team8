@@ -70,6 +70,7 @@ function getBgFile(input) {
           .width(backgroundWidth)
           .height(backgroundHeight)
         ;
+        $('#bgFile').val(e.target.result);
       };
     };
     bgFile.readAsDataURL(input.files[0]);
@@ -128,6 +129,9 @@ function getWatermarkFile(input) {
             top:0,
             left: 0
           });
+
+        $('#wmScale').val(watermarkScale);
+        $('#wmFile').val(e.target.result);
       };
     };
     wmFile.readAsDataURL(input.files[0]);
