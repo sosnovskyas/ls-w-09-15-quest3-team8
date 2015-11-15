@@ -16,7 +16,16 @@ var blocksModule = (function () {
       canvas_container = $('#canvas__watermark-container'),
       ui_slider_range = $('.ui-slider-range'),
       ui_slider_handle = $('.ui-slider-handle'),
-      canvas_watermark = $('#canvas__watermark');
+      canvas_watermark = $('#canvas__watermark'),
+      container_path = $('#canvas__img').attr('src'),
+      watermark_path = canvas_watermark.attr('src');
+
+
+  // If there are no images, inputs will be disabled
+
+  if (container_path === '' || watermark_path === '') {
+    $.find('input').attr('disabled', 'disabled');
+  }
 
 
 
