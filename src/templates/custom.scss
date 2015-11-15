@@ -132,6 +132,24 @@ body {
 }
 
 /*
+  DISABLE BLOCKS
+*/
+
+.disabled-block {
+  position: relative;
+  opacity: 0.2;
+}
+
+.shield {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+/*
   HELPER CLASSES
 */
 
