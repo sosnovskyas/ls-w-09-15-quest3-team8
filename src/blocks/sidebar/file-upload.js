@@ -15,6 +15,9 @@ var bgImage = new Image();
 var wmFile = new FileReader();
 var wmImage = new Image();
 
+var spinnerXMax = 0;
+var spinnerYMax = 0;
+
 // совсем немножко чудо математики ;)
 function returnScale(w1,h1,w2,h2){
   var s1 = w2/h2;
@@ -139,6 +142,9 @@ function getWatermarkFile(input) {
 
         $('#wmScale').val(watermarkScale);
         $('#wmFile').val(e.target.result);
+        spinnerXMax = (Math.floor(backgroundWidth) - Math.floor(watermarkWidth));
+        spinnerYMax = (Math.floor(backgroundHeight) - Math.floor(watermarkHeight));
+        positionCoordsModule();
       };
     };
     wmFile.readAsDataURL(input.files[0]);

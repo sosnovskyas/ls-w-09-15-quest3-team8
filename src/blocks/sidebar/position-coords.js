@@ -1,7 +1,7 @@
 ;
-var positionCoordsModule = (function() {
+var positionCoordsModule = function() {
   'use strict';
-  $(window).load(function() {
+
     // watermark parametrs
     var watermark = $('#canvas__watermark');
     var watermarkWidth = parseInt(watermark.css('width'));
@@ -14,8 +14,6 @@ var positionCoordsModule = (function() {
     var canvasHeight = parseInt(canvas.css('height'));
 
     // spinner's parametrs
-    var spinnerXMax = (canvasWidth - watermarkWidth);
-    var spinnerYMax = (canvasHeight - watermarkHeight);
 
     var spinnerX = $('#spinner_x').spinner({
       min: 0,
@@ -41,5 +39,4 @@ var positionCoordsModule = (function() {
         top: currentVal + 'px'
       });
     });
-  });
-})();
+};
