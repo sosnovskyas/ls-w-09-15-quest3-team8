@@ -25,5 +25,4 @@ var downloadResult = function(event) {
       .always(function() {
         $(submitButton).removeAttr('disabled');
       });
-  debugger;
 };
