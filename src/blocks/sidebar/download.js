@@ -1,20 +1,26 @@
 
-$('.setting__form').on('submit', function(e) {
-  e.preventDefault();
-  console.log($(this).serialize())
-  var _data = $(this).serialize();
-  $.ajax({
-    type: 'POST',
-    url: 'watermark.php',
-    data: _data,
-    success: function(data) {
-      $('.results').html(data);
-    },
-    error:  function(xhr, str){
-      alert('Возникла ошибка: ' + xhr.responseCode);
-    }
+$('.setting__form')
+  .attr('disabled', '')
+  .on('submit', function(e) {
+    e.preventDefault();
+    var _data = $(this).serialize();
+    console.log( _data);
+
+    $.ajax({
+      type: 'POST',
+      url: 'watermark.php',
+      data: _data,
+      success: function(data) {
+        $('.results').html(data);
+      },
+      error:  function(xhr, str){
+        console.log('Возникла ошибка: ' + xhr.responseCode);
+      },
+      always: function() {
+        $(submitButton).removeAttr('disabled');
+      }
+    });
   });
-});
 
 /*
 
