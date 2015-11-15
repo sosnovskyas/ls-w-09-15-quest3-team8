@@ -12,15 +12,19 @@ $('.position-blocks__link').on('click', function(e){
   var $this = $(this),
     position = $this.data('position'),
     canvas_container = $('#canvas__watermark-container'),
-    canvas_width = canvas_container.width(), // 650
-    canvas_height = canvas_container.height(), // 433
-    middle_left = parseInt(canvas_width / 2),
-    middle_top = parseInt(canvas_height / 2);
+    canvas_width = (canvas_container.width() - 51), // 650
+    canvas_height = canvas_container.height(); // 433
 
+  console.log(canvas_height - 51);
 
     canvas_container.css('position', 'absolute');
 
+  // Как бы края х и у программно посчитать
 
+    var x_edge = 450,
+        x_half = x_edge / 2, // 225
+        y_edge = 233,
+        y_half = Math.floor(y_edge / 2); // 116
 
   switch (position) {
     case 'top-left':
@@ -28,73 +32,72 @@ $('.position-blocks__link').on('click', function(e){
     'top': 0,  // y
     'left': 0 // x
   });
-    // Как бы их программно посчитать
-    spinner_x.val(0);
+     spinner_x.val(0);
     spinner_y.val(0);
     break;
   case 'top-center':
     canvas_watermark.css({
     'top': 0,
-    'left': 225 + 'px'
+    'left': x_half
   });
-    spinner_x.val(225);
+    spinner_x.val(x_half);
     spinner_y.val(0);
     break;
   case 'top-right':
     canvas_watermark.css({
     'top': 0,
-    'left': 450 + 'px'
+    'left': x_edge
   });
-    spinner_x.val(450);
+    spinner_x.val(x_edge);
     spinner_y.val(0);
     break;
   case 'middle-left':
     canvas_watermark.css({
-    'top': 116 + 'px',
+    'top': y_half,
     'left': 0
   });
     spinner_x.val(0);
-    spinner_y.val(116);
+    spinner_y.val(y_half);
     break;
   case 'middle-center':
   canvas_watermark.css({
-    'top': 116 + 'px',
-    'left':225 + 'px'
+    'top': y_half,
+    'left':x_half
   });
-  spinner_x.val(225);
-  spinner_y.val(116);
+  spinner_x.val(x_half);
+  spinner_y.val(y_half);
   break;
   case 'middle-right':
   canvas_watermark.css({
-    'top': 116 + 'px',
-    'left': 450 + 'px'
+    'top': y_half,
+    'left': x_edge
   });
-  spinner_x.val(450);
-  spinner_y.val(116);
+  spinner_x.val(x_edge);
+  spinner_y.val(y_half);
   break;
   case 'bottom-left':
   canvas_watermark.css({
-    'top': 233 + 'px',
+    'top': y_edge,
     'left': 0
   });
   spinner_x.val(0);
-  spinner_y.val(233);
+  spinner_y.val(y_edge);
   break;
   case 'bottom-center':
   canvas_watermark.css({
-    'top': 233 + 'px',
-    'left': 225 + 'px'
+    'top': y_edge,
+    'left': x_half
   });
-  spinner_x.val(225);
-  spinner_y.val(233);
+  spinner_x.val(x_half);
+  spinner_y.val(y_edge);
   break;
   case 'bottom-right':
   canvas_watermark.css({
-    'top': 233 + 'px',
-    'left': 450 + 'px'
+    'top': y_edge,
+    'left': x_edge
   });
-  spinner_x.val(450);
-  spinner_y.val(233);
+  spinner_x.val(x_edge);
+  spinner_y.val(y_edge);
   break;
 }
 
@@ -110,7 +113,7 @@ $('.setting__form').on('reset', function(e){
   );
   spinner_x.val(0);
   spinner_y.val(0);
-  opacity_input.val(100); // для 100% сброса всех значений!
+  opacity_input.val(100);
   ui_slider_range.css('width', '100%');
   ui_slider_handle.css('left', '100%');
 });
