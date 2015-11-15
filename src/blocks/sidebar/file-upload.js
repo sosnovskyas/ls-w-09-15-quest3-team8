@@ -67,9 +67,16 @@ function getBgFile(input) {
 
         $('#canvas__img')
           .attr('src', e.target.result)
+        ;
+        $('#canvas')
           .width(backgroundWidth)
           .height(backgroundHeight)
         ;
+        $('#canvas__watermark-container')
+          .width(backgroundWidth)
+          .height(backgroundHeight)
+        ;
+
         $('#bgFile').val(e.target.result);
       };
     };

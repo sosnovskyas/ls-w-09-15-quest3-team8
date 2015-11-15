@@ -1,16 +1,24 @@
 .canvas__wrapper {
-  
+  width: 650px;
+  height: 535px;
+  background: url('i/bg_canvas.jpg') repeat 0 0 #fff;
+  position: relative;
+
 }
 
 .canvas {
   width: 650px;
   height: 535px;
-  background: url('i/bg_canvas.jpg') repeat 0 0 #fff;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 
 .canvas__container {
-    
+  position: relative;
 }
 
 .canvas__image {
