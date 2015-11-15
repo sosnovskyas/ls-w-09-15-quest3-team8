@@ -1,7 +1,7 @@
 // Sidebar
 aside.main-sidebar
   h2.main-sidebar__header Настройки
-  form.setting__form
+  form(onsubmit="downloadResult(this);", action="javascript:void(null);", method="post").setting__form
     // Settings
     ul.settings__list
       // Upload Image and Watermark
@@ -58,4 +58,4 @@ aside.main-sidebar
     // Buttons
     .settings__buttons.clearfix
       input.settings__btn.settings__btn_reset(type="reset" value="Сброс")
-      input.settings__btn.settings__btn_download#download(type="submit", value="Скачать", onclick="downloadResult(this);")
+      input.settings__btn.settings__btn_download#download(type="submit", value="Скачать")
