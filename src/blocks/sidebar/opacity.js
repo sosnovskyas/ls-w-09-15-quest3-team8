@@ -20,10 +20,10 @@ var opacityModule = (function(){
       value: 100,
       step: 0.05,
       slide: function (event, ui) {
-        var opacity_val = (ui.value)/100;
+        var opacity_val = Math.floor(ui.value)/100;
 
         canvas.css('opacity', opacity_val);
-        opacityInput.val(ui.value);
+        opacityInput.val(opacity_val);
       }
     });
   };
