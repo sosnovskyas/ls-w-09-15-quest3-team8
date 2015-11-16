@@ -5,7 +5,9 @@ $('.setting__form')
     e.preventDefault();
     var x = document.getElementById('spinner_x').value;
     var y = document.getElementById('spinner_y').value;
+    var opacityValue = document.getElementById('opacity__input').value;
     //$('body').append('<canvas id=result width=' + backgroundWidth + ' height = '+backgroundHeight +' />');
+    context.globalAlpha= (opacityValue / 100);
     context.drawImage(wmImage, x, y, watermarkWidth, watermarkHeight);
 
     //canvas.toDataURL('image/jpeg');
