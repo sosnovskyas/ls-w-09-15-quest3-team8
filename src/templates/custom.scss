@@ -183,10 +183,11 @@ input, textarea {
   *zoom: 1;
 }
 
-.result{
+.result-wrapper{
   position: absolute;
   top: 0;
   left: -999999;
+  opacity: 0;
 }
 
 /*
