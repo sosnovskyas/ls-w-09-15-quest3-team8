@@ -18,8 +18,6 @@ var wmImage = new Image();
 var spinnerXMax = 0;
 var spinnerYMax = 0;
 
-var canvas = document.getElementById('result');
-var context = canvas.getContext('2d');
 
 // совсем немножко чудо математики ;)
 function returnScale(w1,h1,w2,h2){
@@ -82,10 +80,6 @@ function getBgFile(input) {
           .height(backgroundHeight)
         ;
 
-        canvas.width = backgroundWidth;
-        canvas.height = backgroundHeight;
-
-        context.drawImage(bgImage, 0, 0, backgroundWidth, backgroundHeight);
 
         $('#bgFile').val(e.target.result);
       };
