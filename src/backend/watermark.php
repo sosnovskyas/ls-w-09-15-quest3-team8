@@ -5,10 +5,10 @@ use WideImage\WideImage as WideImage;
 $background = WideImage::load($_POST['bgFile']);
 $watermark = WideImage::load($_POST['wmFile']);
 
-$wmParam = getimagesize($_POST['wmFile']); // Получаем размеры вотермарка в маcсив
-$wmWidth = $wmParam[0]; //  ширина
+$wmParam = getimagesize($_POST['wmFile']); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅcпїЅпїЅпїЅ
+$wmWidth = $wmParam[0]; //  пїЅпїЅпїЅпїЅпїЅпїЅ
 $wmNewWidth = $wmWidth * $_POST['wmScale'];
-//изменяем размер в соотв с нашей областью экрана
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 $resized = $watermark->resize($wmNewWidth);
 
 
@@ -26,5 +26,10 @@ if ($_POST['positionY'] == '') {
 
 $background->merge($resized, $x, $y, $_POST['opacity'])->saveToFile('new.jpg');;
 
-//накладываем файлы, задаем прозрачность и выводим на экран
-$background->merge($resized, $x, $y, $_POST['opacity'])->output('jpg');
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+$background->merge($resized, $x, $y, $_POST['opacity'])->saveToFile('result.jpg');
+
+
+if (file_exists('result.jpg')) {
+    echo json_encode('result.jpg');
+}
