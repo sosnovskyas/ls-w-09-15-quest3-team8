@@ -11,7 +11,6 @@ $wmNewWidth = $wmWidth * $_POST['wmScale'];
 //изменяем размер в соотв с нашей областью экрана
 $resized = $watermark->resize($wmNewWidth);
 
-
 if ($_POST['positionX'] == '') {
     $x = 0;
 }else{
@@ -24,7 +23,9 @@ if ($_POST['positionY'] == '') {
     $y = $_POST['positionY'];
 }
 
-$background->merge($resized, $x, $y, $_POST['opacity'])->saveToFile('new.jpg');;
+$background->merge($resized, $x, $y, $_POST['opacity'])->saveToFile('result.jpg');
 
-//накладываем файлы, задаем прозрачность и выводим на экран
-$background->merge($resized, $x, $y, $_POST['opacity'])->output('jpg');
+
+if (file_exists('result.jpg')) {
+    echo json_encode('result.jpg');
+}
