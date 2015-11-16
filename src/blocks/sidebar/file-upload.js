@@ -18,13 +18,15 @@ var wmImage = new Image();
 var spinnerXMax = 0;
 var spinnerYMax = 0;
 
+var canvas = document.getElementById('result');
+var context = canvas.getContext('2d');
+
 // совсем немножко чудо математики ;)
 function returnScale(w1,h1,w2,h2){
   var s1 = w2/h2;
   var s2 = w1/h1;
   var w = 0;
   var h = 0;
-console.log('scales' ,s1,s2)
   if(s1 > s2){
       w = w1;
       h =(w1*h2/w2);
@@ -79,6 +81,11 @@ function getBgFile(input) {
           .width(backgroundWidth)
           .height(backgroundHeight)
         ;
+
+        canvas.width = backgroundWidth;
+        canvas.height = backgroundHeight;
+
+        context.drawImage(bgImage, 0, 0, backgroundWidth, backgroundHeight);
 
         $('#bgFile').val(e.target.result);
       };
@@ -147,6 +154,7 @@ function getWatermarkFile(input) {
         } else {
           $('#wmScale').val(1);
         }
+
 
         $('#wmFile').val(e.target.result);
         spinnerXMax = (Math.floor(backgroundWidth) - Math.floor(watermarkWidth));
