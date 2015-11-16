@@ -24,7 +24,7 @@ function returnScale(w1,h1,w2,h2){
   var s2 = w1/h1;
   var w = 0;
   var h = 0;
-
+console.log('scales' ,s1,s2)
   if(s1 > s2){
       w = w1;
       h =(w1*h2/w2);
@@ -38,7 +38,7 @@ function returnScale(w1,h1,w2,h2){
   return {
     w: Math.floor(w),
     h: Math.floor(h),
-    s: Math.floor(s2,s1)
+    s: (w/w2)
   }
 }
 
@@ -141,11 +141,13 @@ function getWatermarkFile(input) {
           });
 
         if((wmImage.width > bgImage.width)||(wmImage.height > bgImage.height)){
-          var sendScale = returnScale(bgImage.width, bgImage.height, wmImage.width, wmImage.height);
-          $('#wmScale').val(sendScale.s);
+          var sendResult = returnScale(bgImage.width, bgImage.height, wmImage.width, wmImage.height);
+          console.log(sendResult.w, wmImage.width,sendResult.w/wmImage.width, sendResult.s)
+          $('#wmScale').val(sendResult.w/wmImage.width);
         } else {
           $('#wmScale').val(1);
         }
+
         $('#wmFile').val(e.target.result);
         spinnerXMax = (Math.floor(backgroundWidth) - Math.floor(watermarkWidth));
         spinnerYMax = (Math.floor(backgroundHeight) - Math.floor(watermarkHeight));
