@@ -8,4 +8,7 @@ $('.setting__form')
     //$('body').append('<canvas id=result width=' + backgroundWidth + ' height = '+backgroundHeight +' />');
     context.drawImage(wmImage, x, y, watermarkWidth, watermarkHeight);
 
+    //canvas.toDataURL('image/jpeg');
+    //var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    window.location.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
   });
