@@ -38,7 +38,7 @@ function returnScale(w1,h1,w2,h2){
   return {
     w: Math.floor(w),
     h: Math.floor(h),
-    s: s2/s1
+    s: Math.floor(s2,s1)
   }
 }
 
@@ -140,7 +140,12 @@ function getWatermarkFile(input) {
             left: 0
           });
 
-        $('#wmScale').val(watermarkScale);
+        if((wmImage.width > bgImage.width)||(wmImage.height > bgImage.height)){
+          var sendScale = returnScale(bgImage.width, bgImage.height, wmImage.width, wmImage.height);
+          $('#wmScale').val(sendScale.s);
+        } else {
+          $('#wmScale').val(1);
+        }
         $('#wmFile').val(e.target.result);
         spinnerXMax = (Math.floor(backgroundWidth) - Math.floor(watermarkWidth));
         spinnerYMax = (Math.floor(backgroundHeight) - Math.floor(watermarkHeight));
