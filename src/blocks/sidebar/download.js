@@ -11,7 +11,8 @@ $('.setting__form')
       url: 'watermark.php',
       data: _data,
       success: function(data) {
-        $('.results').html(data);
+        console.log(data);
+        $.fileDownload(data);
       },
       error:  function(xhr, str){
         console.log('Возникла ошибка: ' + xhr.responseCode);
