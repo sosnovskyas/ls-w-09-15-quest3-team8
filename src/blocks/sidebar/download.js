@@ -1,8 +1,24 @@
 
 $('.setting__form')
-  .attr('disabled', '')
   .on('submit', function(e) {
     e.preventDefault();
+
+    function convertToDataURLviaCanvas(url, callback, outputFormat){
+      var img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = function(){
+        var canvas = document.createElement('CANVAS');
+        var ctx = canvas.getContext('2d');
+        var dataURL;
+        canvas.height = this.height;
+        canvas.width = this.width;
+        ctx.drawImage(this, 0, 0);
+        dataURL = canvas.toDataURL(outputFormat);
+        callback(dataURL);
+        canvas = null;
+      };
+      img.src = url;
+    }
 
     var rawCanva = document.createElement('canvas');
     rawCanva.setAttribute('id','result');
@@ -24,6 +40,10 @@ $('.setting__form')
     console.log(opacity);
     context.globalAlpha= (opacityValue / 100);
     context.drawImage(wmImage, x, y, watermarkWidth, watermarkHeight);
-    window.location.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    rawCanva.destroy();
+
+    // dark magic for adding extention to file
+    var anchor = document.createElement('a');
+    anchor.setAttribute('download', 'watermark.jpeg');
+    anchor.setAttribute('href', canvas.toDataURL("image/jpeg"));
+    anchor.click();
   });
