@@ -30,7 +30,7 @@ var blocksModule = (function () {
 
 
     var x_edge = parseInt(canvas_width - canvas_watermark_width),
-        x_half = x_edge / 2,
+        x_half = Math.floor(x_edge / 2),
         y_edge = parseInt(canvas_container_height - canvas_watermark_height),
         y_half = Math.floor(y_edge / 2);
 
