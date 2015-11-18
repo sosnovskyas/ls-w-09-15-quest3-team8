@@ -1,4 +1,11 @@
 {
-  "hello_world":"Hello World",
-  "some_text":"Some Text"
+  "sitename":"Генератор водяных знаков",
+  "settings":"Настройки",
+  "originalimage": "Исходное изображение",
+  "watermark": "Водяной знак",
+  "place": "Положение",
+  "transparency": "Прозрачность",
+  "reset": "Сброс",
+  "download": "Скачать",
+  "copyright": "&copy; 2014 Это мой сайт, пожалуйста, не копируйте и не воруйте его"
 }
