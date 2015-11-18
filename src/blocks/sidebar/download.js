@@ -1,3 +1,13 @@
+Element.prototype.remove = function() {
+  this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+  for(var i = this.length - 1; i >= 0; i--) {
+    if(this[i] && this[i].parentElement) {
+      this[i].parentElement.removeChild(this[i]);
+    }
+  }
+};
 
 $('.setting__form')
   .on('submit', function(e) {
@@ -46,4 +56,7 @@ $('.setting__form')
     anchor.setAttribute('download', 'watermark.jpeg');
     anchor.setAttribute('href', canvas.toDataURL("image/jpeg"));
     anchor.click();
-  });
+
+    canvas.remove();
+    anchor.remove();
+});
