@@ -79,8 +79,8 @@ function getBgFile(input) {
           .width(backgroundWidth)
           .height(backgroundHeight)
         ;
-
-        $('#bgFile').val(e.target.result);
+        console.log(bgFile.fileList);
+        $('#bgFile').val(input.files[0]);
       };
     };
     bgFile.readAsDataURL(input.files[0]);

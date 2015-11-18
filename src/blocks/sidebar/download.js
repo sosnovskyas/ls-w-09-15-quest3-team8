@@ -4,15 +4,13 @@ $('.setting__form')
   .on('submit', function(e) {
     e.preventDefault();
     var _data = $(this).serialize();
-    console.log( _data);
 
     $.ajax({
       type: 'POST',
-      url: 'watermark.php',
+      url: 'upload.php',
       data: _data,
-      success: function(data) {
-        console.log(data);
-        $.fileDownload(data);
+      success: function(data,e,q,w) {
+        console.log('1',data,'2', e,'q', q,'w',w)
       },
       error:  function(xhr, str){
         console.log('Возникла ошибка: ' + xhr.responseCode);
