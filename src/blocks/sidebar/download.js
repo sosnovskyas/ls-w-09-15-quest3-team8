@@ -40,16 +40,39 @@ $('.setting__form')
     canvas.width = backgroundWidth;
     canvas.height = backgroundHeight;
     context.drawImage(bgImage, 0, 0, backgroundWidth, backgroundHeight);
-    var x = document.getElementById('spinner_x').value;
-    var y = document.getElementById('spinner_y').value;
+    var xPos = document.getElementById('spinner_x').value;
+    var yPos = document.getElementById('spinner_y').value;
     var opacityValue = 100.0;
     var opacity = document.getElementById('opacity__input').value;
     if (opacity){
       opacityValue = opacity;
     }
-    console.log(opacity);
     context.globalAlpha= (opacityValue / 100);
-    context.drawImage(wmImage, x, y, watermarkWidth, watermarkHeight);
+
+    if (multiMode) {
+      var x = 0;
+      var y = 0;
+      var w = 0;
+      var h = 0;
+      var wMax = Math.floor(backgroundWidth/watermarkWidth) + 1;
+      var hMax = Math.floor(backgroundHeight/watermarkHeight) + 1;
+      var wSmeschenie = 2;
+      var hSmeschenie = 10;
+
+      while(h < hMax) {
+        while(w < wMax) {
+          x = ((watermarkWidth * w) + (xPos * w)) + wSmeschenie;
+          y = ((watermarkHeight * h) + (yPos * h)) + hSmeschenie;
+          console.log(xPos, yPos, x,y, w,h);
+          context.drawImage(wmImage, x, y, watermarkWidth, watermarkHeight);
+          w++;
+        }
+        w = 0;
+        h++;
+      }
+    } else {
+      context.drawImage(wmImage, xPos, yPos, watermarkWidth, watermarkHeight);
+    }
 
     // dark magic for adding extention to file
     var anchor = document.createElement('a');
@@ -57,6 +80,6 @@ $('.setting__form')
     anchor.setAttribute('href', canvas.toDataURL("image/jpeg"));
     anchor.click();
 
-    canvas.remove();
-    anchor.remove();
+    //canvas.remove();
+    //anchor.remove();
 });
