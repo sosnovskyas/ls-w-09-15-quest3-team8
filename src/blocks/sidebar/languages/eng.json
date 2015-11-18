@@ -1,4 +1,11 @@
 {
-  "hello_world":"Hello World",
-  "some_text":"Some Text"
+  "sitename":"Watermarks generator",
+  "settings":"Settings",
+  "originalimage": "Original image",
+  "watermark": "Watermark",
+  "place": "Place",
+  "transparency": "Transparency",
+  "reset": "Reset",
+  "download": "Download",
+  "copyright": "&copy; 2015 This is my website. Don't copy or steal it, please"
 }
