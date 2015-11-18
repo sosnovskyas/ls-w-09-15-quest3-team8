@@ -1,26 +1,26 @@
 // Sidebar
 aside.main-sidebar
-  h2.main-sidebar__header Настройки
+  h2.main-sidebar__header(data-translate="settings") Настройки
   form.setting__form
     // Settings
     ul.settings__list
       // Upload Image and Watermark
       li.settings__item.settings__upload
         label.upload-image__label
-          h3.upload-image__header Исходное изображение
+          h3.upload-image__header(data-translate="originalimage") Исходное изображение
           .upload-image__file
             input#fileupload_background.upload-image__input(type="file", name="backgroungImage", accept="image/*", onchange="getBgFile(this);")
-            input.upload-image__fake-input(type="text", name="", placeholder="Выберите изображение", disabled)
+            input.upload-image__fake-input(type="text", name="", placeholder="Выберите изображение", data-translate="", disabled)
             .upload-image__file-icon
         label.upload-watermark__label
-          h3.upload-watermark__header Водяной знак
+          h3.upload-watermark__header(data-translate="watermark") Водяной знак
           .upload-watermark__file
             input#fileupload_watermark.upload-watermark__input(type="file" name="", onchange="getWatermarkFile(this);")
             input.upload-watermark__fake-input(type="text" name="" placeholder="Выберите изображение", disabled)
             .upload-watermark__file-icon
       // Set Position
       li.settings__item.settings__position
-        h3.position__header Положение
+        h3.position__header(data-translate="place") Положение
         .position__wrapper.clearfix
           .position-blocks
             ul.position-blocks__list
@@ -51,7 +51,7 @@ aside.main-sidebar
               input#spinner_y.position-coords__input(type="text", name="positionY", placeholder="0")
       // Set Opacity
       li.settings__item.settings__opacity
-        h3.opacity__header Прозрачность
+        h3.opacity__header(data-translate="transparency") Прозрачность
         .opacity__container
           input#opacity__input.opacity__input(type="hidden" name="opacity")
           #opacity__slider.opacity__slider
@@ -61,5 +61,14 @@ aside.main-sidebar
       input#bgFile(type="text", name='bgFile', hidden)
       input#wmScale(type="text", name='wmScale', hidden)
       input#wmFile(type="text", name='wmFile', hidden)
-      input.settings__btn.settings__btn_reset(type="reset" value="Сброс")
-      input.settings__btn.settings__btn_download#download(type="submit", value="Скачать")
+      input.settings__btn.settings__btn_reset(type="reset" value="Сброс" data-translate="reset")
+      input.settings__btn.settings__btn_download#download(type="submit" value="Скачать" data-translate="download")
+
+      // Тут короче заглушки для соц шарингов)))
+
+
+a(href="http://vk.com/share.php?url=http://sosnovskyas.ru") Поделиться ВКонтакте
+a(href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fsosnovskyas.ru&text=%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20%D0%B2%D0%BE%D0%B4%D1%8F%D0%BD%D1%8B%D1%85%20%D0%B7%D0%BD%D0%B0%D0%BA%D0%BE%D0%B2") Twitter
+#fb-root
+// Здесь класс нужно перетереть
+div(class="fb-share-button" data-href="http://sosnovskyas.ru" data-layout="link") Facebook
