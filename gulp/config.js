@@ -12,7 +12,6 @@ module.exports = {
       'dev-clean'
     ],
     sequenceBuild: [
-      'dev-backend',
       'dev-jade',
       'dev-js-vendor',
       'dev-js-custom',
@@ -24,7 +23,6 @@ module.exports = {
       'dev-browsersync'
     ],
     sequenceWatch: [
-      'dev-watch-backend',
       'dev-watch-jade',
       'dev-watch-compass',
       'dev-watch-js-custom',
