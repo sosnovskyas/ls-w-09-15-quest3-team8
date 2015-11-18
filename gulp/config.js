@@ -93,11 +93,6 @@ module.exports = {
     src: src + '/pages/*.jade',
     dest: dev
   },
-  devBackend: {
-    watch: src + '/**/*.php',
-    src: src + '/backend/*.php',
-    dest: dev
-  },
   devBrowsersync: {
     dest: dev
   }
