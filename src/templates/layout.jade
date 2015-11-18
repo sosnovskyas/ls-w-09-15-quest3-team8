@@ -1,22 +1,23 @@
 doctype html
-head
+html(lang="ru-Ru")
+  head
     include head
-body
-  <!--[if lt IE 8]>
-  <p class="chromeframe"> Вы используете устаревший браузер </p>
-  <![endif]-->
+  body
+    <!--[if lt IE 8]>
+    <p class="chromeframe"> Вы используете устаревший браузер </p>
+    <![endif]-->
 
-// Page Wrapper
-.wrapper
-        // Main Content
-        .main
-            .container.clearfix
-                .main-content
-                    h1.main-content__header Генератор водяных знаков
-                    include ../blocks/canvas/canvas
-                include ../blocks/sidebar/sidebar
-        include ../blocks/footer/footer
-#result-wrapper.result-wrapper
-script(src='vendor.js')
-script(src='custom.js')
-
+    // Page Wrapper
+    .wrapper
+      // Main Content
+      .main
+        .container.clearfix
+          .main-content
+            h1.main-content__header Генератор водяных знаков
+            include ../blocks/canvas/canvas
+          include ../blocks/sidebar/sidebar
+      include ../blocks/footer/footer
+    include ../blocks/languages/languages
+    #result-wrapper.result-wrapper
+    script(src='vendor.js')
+    script(src='custom.js')
