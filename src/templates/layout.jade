@@ -9,14 +9,16 @@ html(lang="ru-Ru")
 
   // Page Wrapper
   .wrapper
-          // Main Content
-          .main
-              .container.clearfix
-                  .main-content
-                      h1.main-content__header Генератор водяных знаков
-                      include ../blocks/canvas/canvas
-                  include ../blocks/sidebar/sidebar
-          include ../blocks/footer/footer
+    include ../blocks/languages/languages
+    include ../blocks/socials/socials
+    // Main Content
+    .main
+        .container.clearfix
+            .main-content
+                h1.main-content__header Генератор водяных знаков
+                include ../blocks/canvas/canvas
+            include ../blocks/sidebar/sidebar
+    include ../blocks/footer/footer
   script(src='vendor.js')
   script(src='custom.js')
 
