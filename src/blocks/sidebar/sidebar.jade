@@ -10,7 +10,7 @@ aside.main-sidebar
           h3.upload-image__header(data-translate="originalimage") Исходное изображение
           .upload-image__file
             input#fileupload_background.upload-image__input(type="file", name="backgroungImage", accept="image/*", onchange="getBgFile(this);")
-            input.upload-image__fake-input(type="text", name="", placeholder="Выберите изображение", disabled)
+            input.upload-image__fake-input(type="text", name="", placeholder="Выберите изображение", data-translate="", disabled)
             .upload-image__file-icon
         label.upload-watermark__label
           h3.upload-watermark__header(data-translate="watermark") Водяной знак
@@ -63,3 +63,9 @@ aside.main-sidebar
       input#wmFile(type="text", name='wmFile', hidden)
       input.settings__btn.settings__btn_reset(type="reset" value="Сброс" data-translate="reset")
       input.settings__btn.settings__btn_download#download(type="submit" value="Скачать" data-translate="download")
+
+      // Тут короче заглушки для соц шарингов)))
+
+
+a(href="http://vk.com/share.php?url=http://sosnovskyas.ru") Поделиться ВКонтакте
+
