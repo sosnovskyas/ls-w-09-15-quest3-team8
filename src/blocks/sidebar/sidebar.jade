@@ -12,19 +12,21 @@ aside.main-sidebar
             input#fileupload_background.upload-image__input(type="file", name="backgroungImage", accept="image/*", onchange="getBgFile(this);")
             input.upload-image__fake-input(type="text", name="", placeholder="Выберите изображение", data-translate="chooseimage", disabled)
             .upload-image__file-icon
-        label.upload-watermark__label
+        label.upload-watermark__label.disabled-block
+          .shield
           h3.upload-watermark__header(data-translate="watermark") Водяной знак
           .upload-watermark__file
-            input#fileupload_watermark.upload-watermark__input(type="file" name="", onchange="getWatermarkFile(this);")
+            input#fileupload_watermark.upload-watermark__input(type="file" name="", onchange="getWatermarkFile(this);", disabled)
             input.upload-watermark__fake-input(type="text" name="" placeholder="Выберите изображение", data-translate="chooseimage", disabled)
             .upload-watermark__file-icon
+
       // Set Position
-      li#settings__position.settings__item.settings__position
+      li#settings__position.settings__item.settings__position.disabled-block
         h3.position__header(data-translate="place") Положение
         .switch-mode
           ul.switch-mode__list
             li.switch-mode__item.tiling-mode
-              a.switch-mode__link(href="#") 
+              a.switch-mode__link(href="#")
                 span Замощение            
             li.switch-mode__item.single-mode.active
               a.switch-mode__link(href="#") 
@@ -62,17 +64,19 @@ aside.main-sidebar
               span.position-coords__title Y
               span.position-coords__horizontal-margin
               input#spinner_y.position-coords__input(type="text", name="positionY", placeholder="0")
+        .shield
       // Set Opacity
-      li.settings__item.settings__opacity
+      li.settings__item.settings__opacity.disabled-block
         h3.opacity__header(data-translate="transparency") Прозрачность
         .opacity__container
           input#opacity__input.opacity__input(type="hidden" name="opacity")
           #opacity__slider.opacity__slider
+        .shield
     // Buttons
-    .settings__buttons.clearfix
-
+    .settings__buttons.clearfix.disabled-block
       input#bgFile(type="text", name='bgFile', hidden)
       input#wmScale(type="text", name='wmScale', hidden)
       input#wmFile(type="text", name='wmFile', hidden)
       input.settings__btn.settings__btn_reset(type="reset" value="Сброс" data-translate="reset")
       input.settings__btn.settings__btn_download#download(type="submit" value="Скачать" data-translate="download")
+      .shield

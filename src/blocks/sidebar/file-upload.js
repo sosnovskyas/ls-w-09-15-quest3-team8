@@ -18,6 +18,7 @@ var wmImage = new Image();
 var spinnerXMax = 0;
 var spinnerYMax = 0;
 
+var canUpladWatermark = false;
 
 // совсем немножко чудо математики ;)
 function returnScale(w1,h1,w2,h2){
@@ -82,6 +83,10 @@ function getBgFile(input) {
 
 
         $('#bgFile').val(e.target.result);
+
+        var delMask = $('.upload-watermark__input');
+        delMask.removeAttr('disabled');
+        delMask.closest('.upload-watermark__label').removeClass('disabled-block').find('.shield').remove();
       };
     };
     bgFile.readAsDataURL(input.files[0]);
@@ -158,4 +163,7 @@ function getWatermarkFile(input) {
     };
     wmFile.readAsDataURL(input.files[0]);
   }
+  
+  $('.disabled-block').removeClass('disabled-block');
+  $('.shield').remove();
 }

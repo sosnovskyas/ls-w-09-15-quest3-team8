@@ -7,8 +7,6 @@ $(document).ready(function () {
   var _createTiling = function (){
     var
       clone = null,
-      inputX = $('#spinner_x'),
-      inputY = $('#spinner_y'),
       element = $('.canvas__watermark'),
       wrapper = $('.js-canvas__watermark-container'),
       wrapperWidth = wrapper.width(),
@@ -67,7 +65,7 @@ $(document).ready(function () {
         $('.js-canvas__watermark').css({
           position: 'static'
         });
-        $('.js-canvas__watermark:first').addClass('first-watermark')
+        $('.js-canvas__watermark:first').addClass('first-watermark');
         $('#spinner_x').val(0);
         $('#spinner_y').val(0);
 
@@ -79,18 +77,19 @@ $(document).ready(function () {
         $('.first-watermark')
           .removeClass('first-watermark')
           .css({
-            position: 'absolute'
-
+            'position': 'absolute',
+            'margin-right': 0,
+            'margin-bottom': 0
           });
         $('.js-canvas__watermark-container')
           .css({
             'top': 0,
             'left': 0,
-            'width': 1600 + 'px'
+            'width': backgroundWidth + 'px',
+            'height': backgroundHeight + 'px'
           });
         $('#spinner_x').val(0);
         $('#spinner_y').val(0);
-
       }
     }
   })
