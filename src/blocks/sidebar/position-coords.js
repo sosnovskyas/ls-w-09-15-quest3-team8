@@ -3,7 +3,7 @@ var positionCoordsModule = function() {
   'use strict';
 
     // watermark parametrs
-    var watermark = $('#canvas__watermark');
+    var watermark = $('.js-canvas__watermark');
     var watermarkWidth = parseInt(watermark.css('width'));
     var watermarkHeight = parseInt(watermark.css('height'));
 
@@ -24,19 +24,43 @@ var positionCoordsModule = function() {
       max: spinnerYMax
     });
 
+    var xLine = $('#watermark__vertical-margin');
+    var yLine = $('#watermark__horizontal-margin');
+
     spinnerX
       .on('spin', function(event, ui) {
         var currentVal = ui.value;
 
-        watermark.css({
-          left: currentVal + 'px'
-        });
+        if(tilingMode){
+          xLine.css({
+            'width': currentVal + 'px',
+            'margin-left': (currentVal/-2) + 'px'
+          });
+          $('.js-canvas__watermark').css({
+            'margin-right': currentVal + 'px'
+          })
+        } else {
+          watermark.css({
+            left: currentVal + 'px'
+          });
+        }
       });
     spinnerY.on('spin', function(event, ui) {
       var currentVal = ui.value;
 
-      watermark.css({
-        top: currentVal + 'px'
-      });
+      if(tilingMode){
+        yLine.css({
+          'height': currentVal + 'px',
+          'margin-top': (currentVal/-2) + 'px'
+        });
+        $('.js-canvas__watermark').css({
+          'margin-bottom': currentVal + 'px'
+        })
+
+      } else {
+        watermark.css({
+          top: currentVal + 'px'
+        });
+      }
     });
 };

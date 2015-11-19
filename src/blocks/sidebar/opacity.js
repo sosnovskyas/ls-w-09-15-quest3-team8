@@ -8,7 +8,7 @@ var opacityModule = (function(){
   };
 
   var opacitySlider = $('#opacity__slider'),
-      canvas = $('#canvas__watermark'),
+      canvas = $('.js-canvas__watermark'),
       opacityInput = $('#opacity__input');
 
 
@@ -20,10 +20,13 @@ var opacityModule = (function(){
       value: 100,
       step: 0.05,
       slide: function (event, ui) {
-        var opacity_val = (ui.value)/100;
+        var opacity_val = (ui.value) / 100;
 
-        canvas.css('opacity', opacity_val);
-        opacityInput.val(ui.value);
+        $('.js-canvas__watermark').each(function () {
+            $(this).css('opacity', opacity_val);
+            opacityInput.val(ui.value);
+          }
+        );
       }
     });
   };

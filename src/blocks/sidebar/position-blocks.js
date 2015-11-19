@@ -13,10 +13,10 @@ var blocksModule = (function () {
       spinner_y = $('#spinner_y'),
       opacity_input = $('#opacity__input'),
       canvas = $('#canvas'),
-      canvas_container = $('#canvas__watermark-container'),
+      canvas_container = $('.js-canvas__watermark-container'),
       ui_slider_range = $('.ui-slider-range'),
       ui_slider_handle = $('.ui-slider-handle'),
-      canvas_watermark = $('#canvas__watermark');
+      canvas_watermark = $('.js-canvas__watermark');
 
 
   var _blocksChange = function (e) {

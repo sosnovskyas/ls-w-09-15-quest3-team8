@@ -367,7 +367,7 @@
 .watermark__vertical-margin {
   display: block;
   position: absolute;
-  width: 1px;
+  width: 0px;
   height: 100px;
   background-color: #f97e76;
   left: 50%;
@@ -379,7 +379,7 @@
   display: block;
   position: absolute;  
   width: 100px;
-  height: 1px;
+  height: 0px;
   background-color: #f97e76;
   top: 50%;
   margin-top: -1px;

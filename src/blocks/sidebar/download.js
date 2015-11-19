@@ -1,3 +1,4 @@
+/*
 Element.prototype.remove = function() {
   this.parentElement.removeChild(this);
 }
@@ -8,6 +9,7 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
     }
   }
 };
+*/
 
 $('.setting__form')
   .on('submit', function(e) {
@@ -49,15 +51,14 @@ $('.setting__form')
     }
     context.globalAlpha= (opacityValue / 100);
 
-    if (multiMode) {
+    if (tilingMode) {
       var x = 0;
       var y = 0;
       var w = 0;
       var h = 0;
       var wMax = Math.floor(backgroundWidth/watermarkWidth) + 1;
       var hMax = Math.floor(backgroundHeight/watermarkHeight) + 1;
-      var wSmeschenie = 2;
-      var hSmeschenie = 10;
+
 
       while(h < hMax) {
         while(w < wMax) {
@@ -80,6 +81,6 @@ $('.setting__form')
     anchor.setAttribute('href', canvas.toDataURL("image/jpeg"));
     anchor.click();
 
-    //canvas.remove();
+    canvas.remove();
     //anchor.remove();
 });

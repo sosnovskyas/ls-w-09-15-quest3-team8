@@ -75,7 +75,7 @@ function getBgFile(input) {
           .width(backgroundWidth)
           .height(backgroundHeight)
         ;
-        $('#canvas__watermark-container')
+        $('.js-canvas__watermark-container')
           .width(backgroundWidth)
           .height(backgroundHeight)
         ;
@@ -132,7 +132,7 @@ function getWatermarkFile(input) {
 
         }
 
-        $('#canvas__watermark')
+        $('.js-canvas__watermark')
           .attr('src', e.target.result)
           .width(watermarkWidth)
           .height(watermarkHeight)

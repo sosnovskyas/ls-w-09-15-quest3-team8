@@ -11,14 +11,14 @@ var dragModule = (function() {
     var _dragWatermark = function() {
         var inputX = $('#spinner_x'),
             inputY = $('#spinner_y'),
-            imgСont = $('#canvas__watermark-container'),
-            watermark = imgСont.find('#canvas__watermark'),
+            imgСont = $('.js-canvas__watermark-container'),
+            watermark = imgСont.find('.js-canvas__watermark'),
             position = watermark.position();
 
         if (watermark.length) {
-            $('#canvas__watermark').draggable({
+            $('.js-canvas__watermark').draggable({
                 cursor: "move",
-                containment: '#canvas__img',
+                containment: '.js-canvas__watermark-container',
                 drag: function(event, ui) {
                     inputX.val(ui.position.left);
                     inputY.val(ui.position.top);
