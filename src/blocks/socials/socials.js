@@ -1,11 +1,14 @@
+// Задаем размеры кастомно, ибо разные браузеры ведут себя по разному
+// для ФФ и Хрома
+
 // FB
 
 $('.fb').on('click', function(e){
         e.preventDefault;
-        window.open('https://www.facebook.com/sharer/sharer.php?u=http://sosnovskyas.ru', '_blank', 'toolbar=0,location=0,menubar=0');
+        window.open('https://www.facebook.com/sharer/sharer.php?u=http://sosnovskyas.ru', '_blank', 'toolbar=0,location=0,menubar=0,height=300,width=900');
 });
 
-// Twitter - размеры окна, к сожалению, задаем кастомно
+// Twitter
 
 $('.tw').on('click', function(e){
         e.preventDefault;
@@ -16,5 +19,5 @@ $('.tw').on('click', function(e){
 
 $('.vk').on('click', function(e){
         e.preventDefault;
-        window.open('http://vk.com/share.php?url=http://sosnovskyas.ru', '_blank', 'toolbar=0,location=0,menubar=0');
+        window.open('http://vk.com/share.php?url=http://sosnovskyas.ru', '_blank', 'toolbar=0,location=0,menubar=0,height=300,width=900');
 });
