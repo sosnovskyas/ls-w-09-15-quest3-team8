@@ -15,6 +15,7 @@ module.exports = {
       'dev-jade',
       'dev-js-vendor',
       'dev-js-custom',
+      'dev-json-custom',
       'dev-compass',
       'dev-fonts',
       'dev-img'
@@ -70,6 +71,10 @@ module.exports = {
     src: src + '/**/*.{js,coffee}',
     watch: src + '/**/*.{js,coffee}',
     concatFile: 'custom.js',
+    dest: dev
+  },
+  devJsonCustom: {
+    src: src + '/blocks/lang/*.json',
     dest: dev
   },
   devJsVendor: {
