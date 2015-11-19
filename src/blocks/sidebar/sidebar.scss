@@ -237,9 +237,81 @@
   text-overflow: ellipsis;
 }
 
+.settings__position {
+  position: relative;
+}
+
+/* swith mode */
+
+.switch-mode {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.switch-mode__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 11px 0 0;
+  text-align: right;
+}
+
+.switch-mode__item {
+  display: inline-block;
+  margin-left: 6px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.switch-mode__link {
+  display: block;
+  position: relative;
+  height: 19px;
+  width: 19px; 
+
+  & span {
+    display: none;
+  } 
+
+  &:after {
+    display: block;
+    content: "";
+    height: 19px;
+    width: 19px;
+    position: absolute;
+    background-image: url('i/sprite-tiling.png');
+    background-repeat: no-repeat;
+  }
+}
+
+.switch-mode__item.single-mode .switch-mode__link:after {
+  background-position: -44px -5px;
+}
+
+.switch-mode__item.tiling-mode .switch-mode__link:after{
+  background-position: -34px -34px;
+}
+
+.switch-mode__item.single-mode.active .switch-mode__link:after,
+.switch-mode__item.single-mode .switch-mode__link:hover:after {
+  background-position: -5px -34px;
+}
+
+.switch-mode__item.tiling-mode.active .switch-mode__link:after,
+.switch-mode__item.tiling-mode .switch-mode__link:hover:after {
+  background-position: -73px -5px;
+}
+
+
+
+/* position blocks */
+
 .position-blocks {
   width: 50%;
-  float: left;      
+  float: left;
+  position: relative;      
 }
 
 .position-blocks__list {
@@ -274,6 +346,85 @@
   &:hover {
     background-color: #f97e76;            
   }           
+}
+
+/* tiling */
+
+.watermark__tiling {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 99px;
+  width: 99px;
+  margin-top: 1px;
+  margin-left: 1px;
+  z-index: 100;
+  overflow: hidden;
+  @include border-radius(4px);   
+}
+
+.watermark__vertical-margin {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 100px;
+  background-color: #f97e76;
+  left: 50%;
+  margin-left: -1px;
+  top: 0;
+}
+
+.watermark__horizontal-margin {
+  display: block;
+  position: absolute;  
+  width: 100px;
+  height: 1px;
+  background-color: #f97e76;
+  top: 50%;
+  margin-top: -1px;
+  left: 0;  
+}
+
+.position-coords__vertical-margin,
+.position-coords__horizontal-margin {
+  display: none;
+  background-image: url('i/sprite-tiling.png');
+  position: absolute;
+}
+
+.position-coords__vertical-margin {
+  right: 72px;
+  top: 9px;
+  width: 11px;
+  height: 30px;
+  background-position: -63px -34px;
+}
+
+.position-coords__horizontal-margin {
+    right: 72px;
+    top: 18px;  
+    width: 29px;
+    height: 9px;
+    background-position: -5px -5px;
+}
+
+
+.tiling-mode {
+
+  .watermark__tiling {
+    display: block;
+  }
+
+  .position-coords__vertical-margin,
+  .position-coords__horizontal-margin {
+    display: inline-block;
+  }
+
+  .position-coords__title {
+    display: none;    
+  }
+
 }
 
 /* position coords */

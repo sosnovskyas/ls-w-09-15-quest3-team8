@@ -19,8 +19,16 @@ aside.main-sidebar
             input.upload-watermark__fake-input(type="text" name="" placeholder="Выберите изображение", data-translate="chooseimage", disabled)
             .upload-watermark__file-icon
       // Set Position
-      li.settings__item.settings__position
+      li#settings__position.settings__item.settings__position
         h3.position__header(data-translate="place") Положение
+        .switch-mode
+          ul.switch-mode__list
+            li.switch-mode__item.tiling-mode
+              a.switch-mode__link(href="#") 
+                span Замощение            
+            li.switch-mode__item.single-mode.active
+              a.switch-mode__link(href="#") 
+                span Обычный     
         .position__wrapper.clearfix
           .position-blocks
             ul.position-blocks__list
@@ -42,12 +50,17 @@ aside.main-sidebar
                 a(href="#" data-position="bottom-center").position-blocks__link
               li.position-blocks__item
                 a(href="#" data-position="bottom-right").position-blocks__link
+            #watermark__tiling.watermark__tiling
+              span#watermark__vertical-margin.watermark__vertical-margin
+              span#watermark__horizontal-margin.watermark__horizontal-margin
           .position-coords
             .position-coords__label
               span.position-coords__title X
+              span.position-coords__vertical-margin
               input#spinner_x.position-coords__input(type="text", name="positionX", placeholder="0")
             .position-coords__label
               span.position-coords__title Y
+              span.position-coords__horizontal-margin
               input#spinner_y.position-coords__input(type="text", name="positionY", placeholder="0")
       // Set Opacity
       li.settings__item.settings__opacity
