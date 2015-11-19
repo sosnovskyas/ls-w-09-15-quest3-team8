@@ -54,4 +54,3 @@
 * Сергей Иванов (`Ivanofsa`) - JavaScript  
 * Илья Соловейчик (`thesiv95`) - JavaScript, readme  
 * Сергей Внуков (`sergeivnukov`) - вёрстка (Jade, Sass)  
-* Евгения Пронина (`EvgeniyaPronina`) - backend (PHP)
