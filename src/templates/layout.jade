@@ -4,7 +4,7 @@ html(lang="ru-Ru")
     include head
   body
     <!--[if lt IE 8]>
-    <p class="chromeframe"> Вы используете устаревший браузер </p>
+    <p class="chromeframe" data-translate="oldbrowser"> Вы используете устаревший браузер </p>
     <![endif]-->
 
     // Page Wrapper
@@ -13,7 +13,7 @@ html(lang="ru-Ru")
       .main
         .container.clearfix
           .main-content
-            h1.main-content__header Генератор водяных знаков
+            h1.main-content__header(data-translate="sitename") Генератор водяных знаков
             include ../blocks/canvas/canvas
           include ../blocks/sidebar/sidebar
       include ../blocks/footer/footer
