@@ -122,13 +122,31 @@ body {
 .main-content__header {
   font-family: $font-segoeuilight;
   color: #fff;
-  line-height: 36px;
+  line-height: 46px;
   font-size: 36px;
   font-weight: normal;
-  margin: 0 0 60px 0;
+  margin: 0 0 50px 0;
   max-width: 650px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/*
+  DISABLE BLOCKS
+*/
+
+.disabled-block {
+  position: relative;
+  opacity: 0.2;
+}
+
+.shield {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
 }
 
 /*
@@ -193,6 +211,8 @@ input, textarea {
 /*
   INCLUDES
 */
+@import '../blocks/lang/lang';
+@import '../blocks/socials/socials';
 @import '../blocks/canvas/canvas';
 @import '../blocks/sidebar/sidebar';
 @import '../blocks/footer/footer';

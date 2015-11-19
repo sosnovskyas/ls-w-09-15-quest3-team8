@@ -1,0 +1,61 @@
+/* Switch Languages */
+.switch-languages {
+  position: fixed;
+  top: 100px;
+  left: 0;
+}
+
+.switch-languages__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.switch-languages__item {
+  margin-bottom: 1px;
+}
+
+.switch-languages__link {
+  display: block;
+  width: 45px;
+  height: 35px;
+  background-color: #d6d4d7;
+  background-image: none;
+  text-indent: -9999px; 
+  position: relative;
+
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 5px;
+    width: 35px;
+    height: 14px;
+    background-image: url('i/sprite-aside.png');
+    background-repeat: no-repeat;
+  }
+}
+
+.switch-languages__item.rus {
+  .switch-languages__link:after {
+    background-position: -30px -29px;
+  }    
+  .switch-languages__link.active:after,
+  .switch-languages__link:hover:after {
+      background-position: -71px -42px;   
+  } 
+}
+
+.switch-languages__item.eng {
+  .switch-languages__link:after {
+    background-position: -5px -5px;
+  }    
+  .switch-languages__link.active:after,
+  .switch-languages__link:hover:after {
+      background-position: -50px -5px;   
+  } 
+}
+
+

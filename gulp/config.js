@@ -12,10 +12,10 @@ module.exports = {
       'dev-clean'
     ],
     sequenceBuild: [
-      'dev-backend',
       'dev-jade',
       'dev-js-vendor',
       'dev-js-custom',
+      'dev-json-custom',
       'dev-compass',
       'dev-fonts',
       'dev-img'
@@ -24,7 +24,6 @@ module.exports = {
       'dev-browsersync'
     ],
     sequenceWatch: [
-      'dev-watch-backend',
       'dev-watch-jade',
       'dev-watch-compass',
       'dev-watch-js-custom',
@@ -74,6 +73,10 @@ module.exports = {
     concatFile: 'custom.js',
     dest: dev
   },
+  devJsonCustom: {
+    src: src + '/blocks/lang/*.json',
+    dest: dev
+  },
   devJsVendor: {
     src: [
       './bower_components/jquery/dist/jquery.js',
@@ -91,11 +94,6 @@ module.exports = {
   devJade: {
     watch: src + '/**/*.jade',
     src: src + '/pages/*.jade',
-    dest: dev
-  },
-  devBackend: {
-    watch: src + '/**/*.php',
-    src: src + '/backend/*.php',
     dest: dev
   },
   devBrowsersync: {

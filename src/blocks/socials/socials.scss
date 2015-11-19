@@ -1,0 +1,106 @@
+/* Switch Languages */
+.social-share {
+  position: fixed;
+  top: 190px;
+  left: -45px;
+  padding-right: 45px;
+  @include transition-property(all);
+  @include transition-duration(300ms);
+  @include transition-timing-function(ease-out);      
+
+  &:hover {
+    left: 0;
+    cursor: pointer;    
+  }
+
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 40px;
+    background-image: url('i/sprite-aside.png');
+    background-color: #d6d4d7;    
+    background-repeat: no-repeat;
+    background-position: -20px -62px;    
+  }
+
+}
+
+.social-share__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.social-share__item {
+
+}
+
+.social-share__link {
+  display: block;
+  width: 45px;
+  height: 40px;
+  background-image: none;
+  text-indent: -9999px; 
+  position: relative;
+  background-color: #d6d4d7; 
+
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 5px;
+    width: 26px;
+    height: 32px;
+    background-image: url('i/sprite-aside.png');
+    background-color: #d6d4d7;
+    background-repeat: no-repeat;
+  }
+}
+
+.social-share__item.fb {
+  .social-share__link:after {
+    width: 15px;
+    height: 27px;    
+    top: 8px;
+    left: 12px;
+    background-position: -95px -5px;
+  }    
+  .social-share__link.active:after,
+  .social-share__link:hover:after {
+      background-position: -5px -42px;   
+  } 
+}
+
+.social-share__item.tw {
+  .social-share__link:after {
+    width: 28px;
+    height: 22px;
+    left: 8px;    
+    background-position: -120px -5px;
+  }    
+  .social-share__link.active:after,
+  .social-share__link:hover:after {
+      background-position: -120px -37px;   
+  } 
+}
+
+.social-share__item.vk {
+  .social-share__link:after {
+    width: 32px;
+    height: 18px;
+    top: 12px;
+    background-position: -102px -69px;
+  }    
+  .social-share__link.active:after,
+  .social-share__link:hover:after {
+      background-position: -102px -97px;   
+  } 
+}
+
+

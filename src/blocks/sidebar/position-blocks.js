@@ -13,10 +13,10 @@ var blocksModule = (function () {
       spinner_y = $('#spinner_y'),
       opacity_input = $('#opacity__input'),
       canvas = $('#canvas'),
-      canvas_container = $('#canvas__watermark-container'),
+      canvas_container = $('.js-canvas__watermark-container'),
       ui_slider_range = $('.ui-slider-range'),
       ui_slider_handle = $('.ui-slider-handle'),
-      canvas_watermark = $('#canvas__watermark');
+      canvas_watermark = $('.js-canvas__watermark');
 
 
   var _blocksChange = function (e) {
@@ -123,7 +123,30 @@ var blocksModule = (function () {
     opacity_input.val(100);
     ui_slider_range.css('width', '100%');
     ui_slider_handle.css('left', '100%');
-  }
+
+    if (tilingMode) {
+      var xLine = $('#watermark__vertical-margin');
+      var yLine = $('#watermark__horizontal-margin');
+
+      $('.js-canvas__watermark-container')
+        .css({
+          'top': 0,
+          'left': 0
+        });
+      $('.js-canvas__watermark').css({
+        'margin': 0,
+        'opacity': 1
+      });
+      xLine.css({
+        'width': 0 + 'px',
+        'margin-left': 0 + 'px'
+      });
+      yLine.css({
+        'height': 0 + 'px',
+        'margin-top': 0 + 'px'
+      });
+    }
+  };
 
   return {
     init: init
